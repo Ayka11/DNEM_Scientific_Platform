@@ -174,3 +174,10 @@ class Persistence:
         else:
             rows=self.conn.execute("SELECT payload FROM analyses ORDER BY created_at").fetchall()
         return [json.loads(r["payload"]) for r in rows]
+
+    def close(self):
+        """Close the SQLite connection deterministically."""
+        conn = getattr(self, "conn", None)
+        if conn is not None:
+            conn.close()
+            self.conn = None
