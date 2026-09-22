@@ -1,0 +1,17 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Scientific Audit & Reproducibility Engine v1.0",
+  "hash_algorithm": "SHA-256",
+  "chain": [
+    "experiment",
+    "dataset",
+    "software_version",
+    "analysis",
+    "evidence",
+    "claim",
+    "governance_decision"
+  ],
+  "integrity_check": true,
+  "scientific_validity_from_hash": false
+}

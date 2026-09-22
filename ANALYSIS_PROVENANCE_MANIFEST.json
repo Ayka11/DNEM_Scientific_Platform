@@ -1,0 +1,1 @@
+{"component":"analysis-provenance","version":"1.0","purpose":"Persist immutable dataset-analysis records with dataset hash lineage and verification","scientific_boundary":"Provenance does not establish validity, causality, construct inference, or validation."}

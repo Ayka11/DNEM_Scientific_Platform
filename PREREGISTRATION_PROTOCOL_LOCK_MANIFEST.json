@@ -1,0 +1,19 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Research Protocol Lock & Pre-registration Engine v1.0",
+  "lifecycle": [
+    "DRAFT",
+    "LOCKED",
+    "AMENDMENT"
+  ],
+  "protected_fields": [
+    "hypotheses",
+    "primary_outcomes",
+    "secondary_outcomes",
+    "exclusion_rules",
+    "analysis_plan"
+  ],
+  "amendments_require_reason": true,
+  "integrity_hash": "SHA-256"
+}

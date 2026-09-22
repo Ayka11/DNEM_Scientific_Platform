@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+dist/
+build/
+*.db
+
+dnem_localhost_*.log
+*.sqlite
+*.sqlite3

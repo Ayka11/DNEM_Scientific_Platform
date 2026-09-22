@@ -1,0 +1,28 @@
+{
+  "release": "DNEM v7.7",
+  "artifact": "RELEASE_CANDIDATE",
+  "application_status": "APPLICATION_LEVEL_DEPLOYMENT_VALIDATED",
+  "api_ui_entrypoint": "FASTAPI_PLUS_GRADIO",
+  "gradio_mount": "/ui",
+  "api_prefix": "/api/v1",
+  "default_port": 7860,
+  "checks": {
+    "compile": true,
+    "production_integration": true,
+    "end_to_end_cycle": true,
+    "audit_snapshot": true,
+    "preregistration_lock": true,
+    "protocol_lineage": true,
+    "successor_executor": true,
+    "model_revision_lineage": true,
+    "analysis_provenance": true,
+    "sqlite_clean_init": true,
+    "absolute_windows_path_scan": true,
+    "fastapi_health_http_200": true,
+    "fastapi_docs_http_200": true,
+    "gradio_ui_reachable": true,
+    "docker_runtime": false
+  },
+  "scientific_validation_automated": false,
+  "docker_runtime_verified": false
+}

@@ -1,0 +1,12 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Sensitivity & Robustness Analysis Engine v1.0",
+  "outputs": [
+    "absolute_change",
+    "relative_change",
+    "same_direction"
+  ],
+  "default_status": "DESCRIPTIVE",
+  "automatic_claim_promotion": false
+}

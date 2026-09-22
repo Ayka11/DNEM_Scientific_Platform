@@ -1,0 +1,10 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "artifact": "DNEM_v7.7_EXECUTABLE_APPLICATION_SKELETON",
+  "status": "IMPLEMENTATION_BASELINE",
+  "measurement_count": 170,
+  "scientific_validation": false,
+  "deployment_target": "Hugging Face Spaces",
+  "entrypoint": "app.py"
+}

@@ -1,0 +1,9 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "artifact": "OPERATIONAL_MEASUREMENT_SPECIFICATIONS_170",
+  "measurement_count": 170,
+  "specification_sha256": "f1cf02313e68a5235e49e1f818739459b25a02d33bb3c4e552489b628c458987",
+  "implementation_maturity": "SPECIFIED",
+  "scientific_validation": false
+}

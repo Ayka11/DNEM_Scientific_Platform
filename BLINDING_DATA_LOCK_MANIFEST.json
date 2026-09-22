@@ -1,0 +1,14 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Blinding & Data-Lock Engine v1.0",
+  "lifecycle": [
+    "REGISTERED",
+    "LOCKED",
+    "UNLOCKED",
+    "UNBLINDED"
+  ],
+  "integrity_hash": "SHA-256",
+  "silent_unblinding": false,
+  "leakage_detection_guarantee": false
+}

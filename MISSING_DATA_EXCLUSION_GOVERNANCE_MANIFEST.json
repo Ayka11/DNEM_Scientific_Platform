@@ -1,0 +1,12 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Missing Data & Exclusion Governance Engine v1.0",
+  "controls": [
+    "pre_registered_rules",
+    "amendment_tracking",
+    "exclusion_decision_provenance",
+    "missingness_summary"
+  ],
+  "automatic_MCAR_MAR_MNAR_classification": false
+}

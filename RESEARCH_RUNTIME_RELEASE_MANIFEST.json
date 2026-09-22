@@ -1,0 +1,11 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "runtime": "Research Runtime v1.0",
+  "status": "IMPLEMENTATION_BASELINE",
+  "measurement_registry": 170,
+  "synthetic_runtime": true,
+  "persistent_storage": "SQLite",
+  "scientific_validation": false,
+  "real_participant_data": false
+}

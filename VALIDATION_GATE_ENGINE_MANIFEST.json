@@ -1,0 +1,15 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Validation Gate Engine v1.0",
+  "mandatory_gates": [
+    "reliability",
+    "construct_validity",
+    "stability",
+    "invariance",
+    "replication",
+    "generalization"
+  ],
+  "default_policy": "BLOCK",
+  "scientific_validation": false
+}

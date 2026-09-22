@@ -1,0 +1,9 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Domain Results Engine v1.0",
+  "status": "IMPLEMENTATION_BASELINE",
+  "task_to_construct_gate": "enforced",
+  "integrated_construct_score": "disabled_by_default",
+  "scientific_validation": false
+}

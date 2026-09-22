@@ -1,0 +1,18 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Psychometric Validation Engine v1.0",
+  "implemented": [
+    "descriptive",
+    "pearson",
+    "cronbach_alpha",
+    "split_half",
+    "test_retest",
+    "paired_change",
+    "group_difference",
+    "invariance_screen",
+    "criterion_correlation"
+  ],
+  "auto_pass": false,
+  "scientific_validation": false
+}

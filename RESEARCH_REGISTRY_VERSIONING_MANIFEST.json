@@ -1,0 +1,16 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Scientific Research Registry & Experiment Versioning v1.0",
+  "object_types": [
+    "EXPERIMENT",
+    "PROTOCOL",
+    "DATASET",
+    "ANALYSIS",
+    "EVIDENCE",
+    "CLAIM"
+  ],
+  "id_format": "PREFIX-######",
+  "immutable_hash": "SHA-256",
+  "historical_mutation": false
+}

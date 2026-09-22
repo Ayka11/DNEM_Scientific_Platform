@@ -1,0 +1,17 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Multiplicity & Statistical Decision Governance Engine v1.0",
+  "roles": [
+    "PRIMARY",
+    "SECONDARY",
+    "EXPLORATORY"
+  ],
+  "corrections": [
+    "NONE",
+    "BONFERRONI",
+    "HOLM",
+    "BENJAMINI_HOCHBERG"
+  ],
+  "automatic_claim_validation": false
+}

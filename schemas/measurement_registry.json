@@ -1,0 +1,2382 @@
+{
+  "C01-01": {
+    "measurement_id": "C01-01",
+    "level": "I",
+    "domain_id": "C01",
+    "domain": "Fluid Intelligence / Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C01-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C01-02": {
+    "measurement_id": "C01-02",
+    "level": "I",
+    "domain_id": "C01",
+    "domain": "Fluid Intelligence / Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C01-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C01-03": {
+    "measurement_id": "C01-03",
+    "level": "I",
+    "domain_id": "C01",
+    "domain": "Fluid Intelligence / Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C01-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C01-04": {
+    "measurement_id": "C01-04",
+    "level": "I",
+    "domain_id": "C01",
+    "domain": "Fluid Intelligence / Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C01-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C01-05": {
+    "measurement_id": "C01-05",
+    "level": "I",
+    "domain_id": "C01",
+    "domain": "Fluid Intelligence / Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C01-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C02-01": {
+    "measurement_id": "C02-01",
+    "level": "I",
+    "domain_id": "C02",
+    "domain": "Working Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C02-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C02-02": {
+    "measurement_id": "C02-02",
+    "level": "I",
+    "domain_id": "C02",
+    "domain": "Working Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C02-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C02-03": {
+    "measurement_id": "C02-03",
+    "level": "I",
+    "domain_id": "C02",
+    "domain": "Working Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C02-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C02-04": {
+    "measurement_id": "C02-04",
+    "level": "I",
+    "domain_id": "C02",
+    "domain": "Working Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C02-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C02-05": {
+    "measurement_id": "C02-05",
+    "level": "I",
+    "domain_id": "C02",
+    "domain": "Working Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C02-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C03-01": {
+    "measurement_id": "C03-01",
+    "level": "I",
+    "domain_id": "C03",
+    "domain": "Processing Speed",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C03-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C03-02": {
+    "measurement_id": "C03-02",
+    "level": "I",
+    "domain_id": "C03",
+    "domain": "Processing Speed",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C03-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C03-03": {
+    "measurement_id": "C03-03",
+    "level": "I",
+    "domain_id": "C03",
+    "domain": "Processing Speed",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C03-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C03-04": {
+    "measurement_id": "C03-04",
+    "level": "I",
+    "domain_id": "C03",
+    "domain": "Processing Speed",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C03-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C03-05": {
+    "measurement_id": "C03-05",
+    "level": "I",
+    "domain_id": "C03",
+    "domain": "Processing Speed",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C03-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C04-01": {
+    "measurement_id": "C04-01",
+    "level": "I",
+    "domain_id": "C04",
+    "domain": "Attention",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C04-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C04-02": {
+    "measurement_id": "C04-02",
+    "level": "I",
+    "domain_id": "C04",
+    "domain": "Attention",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C04-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C04-03": {
+    "measurement_id": "C04-03",
+    "level": "I",
+    "domain_id": "C04",
+    "domain": "Attention",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C04-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C04-04": {
+    "measurement_id": "C04-04",
+    "level": "I",
+    "domain_id": "C04",
+    "domain": "Attention",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C04-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C04-05": {
+    "measurement_id": "C04-05",
+    "level": "I",
+    "domain_id": "C04",
+    "domain": "Attention",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C04-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C05-01": {
+    "measurement_id": "C05-01",
+    "level": "I",
+    "domain_id": "C05",
+    "domain": "Inhibitory Control",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C05-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C05-02": {
+    "measurement_id": "C05-02",
+    "level": "I",
+    "domain_id": "C05",
+    "domain": "Inhibitory Control",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C05-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C05-03": {
+    "measurement_id": "C05-03",
+    "level": "I",
+    "domain_id": "C05",
+    "domain": "Inhibitory Control",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C05-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C05-04": {
+    "measurement_id": "C05-04",
+    "level": "I",
+    "domain_id": "C05",
+    "domain": "Inhibitory Control",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C05-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C05-05": {
+    "measurement_id": "C05-05",
+    "level": "I",
+    "domain_id": "C05",
+    "domain": "Inhibitory Control",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C05-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C06-01": {
+    "measurement_id": "C06-01",
+    "level": "I",
+    "domain_id": "C06",
+    "domain": "Cognitive Flexibility",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C06-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C06-02": {
+    "measurement_id": "C06-02",
+    "level": "I",
+    "domain_id": "C06",
+    "domain": "Cognitive Flexibility",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C06-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C06-03": {
+    "measurement_id": "C06-03",
+    "level": "I",
+    "domain_id": "C06",
+    "domain": "Cognitive Flexibility",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C06-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C06-04": {
+    "measurement_id": "C06-04",
+    "level": "I",
+    "domain_id": "C06",
+    "domain": "Cognitive Flexibility",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C06-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C06-05": {
+    "measurement_id": "C06-05",
+    "level": "I",
+    "domain_id": "C06",
+    "domain": "Cognitive Flexibility",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C06-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C07-01": {
+    "measurement_id": "C07-01",
+    "level": "I",
+    "domain_id": "C07",
+    "domain": "Verbal Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C07-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C07-02": {
+    "measurement_id": "C07-02",
+    "level": "I",
+    "domain_id": "C07",
+    "domain": "Verbal Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C07-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C07-03": {
+    "measurement_id": "C07-03",
+    "level": "I",
+    "domain_id": "C07",
+    "domain": "Verbal Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C07-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C07-04": {
+    "measurement_id": "C07-04",
+    "level": "I",
+    "domain_id": "C07",
+    "domain": "Verbal Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C07-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C07-05": {
+    "measurement_id": "C07-05",
+    "level": "I",
+    "domain_id": "C07",
+    "domain": "Verbal Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C07-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C08-01": {
+    "measurement_id": "C08-01",
+    "level": "I",
+    "domain_id": "C08",
+    "domain": "Quantitative Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C08-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C08-02": {
+    "measurement_id": "C08-02",
+    "level": "I",
+    "domain_id": "C08",
+    "domain": "Quantitative Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C08-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C08-03": {
+    "measurement_id": "C08-03",
+    "level": "I",
+    "domain_id": "C08",
+    "domain": "Quantitative Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C08-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C08-04": {
+    "measurement_id": "C08-04",
+    "level": "I",
+    "domain_id": "C08",
+    "domain": "Quantitative Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C08-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C08-05": {
+    "measurement_id": "C08-05",
+    "level": "I",
+    "domain_id": "C08",
+    "domain": "Quantitative Reasoning",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C08-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C09-01": {
+    "measurement_id": "C09-01",
+    "level": "I",
+    "domain_id": "C09",
+    "domain": "Visuospatial Intelligence",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C09-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C09-02": {
+    "measurement_id": "C09-02",
+    "level": "I",
+    "domain_id": "C09",
+    "domain": "Visuospatial Intelligence",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C09-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C09-03": {
+    "measurement_id": "C09-03",
+    "level": "I",
+    "domain_id": "C09",
+    "domain": "Visuospatial Intelligence",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C09-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C09-04": {
+    "measurement_id": "C09-04",
+    "level": "I",
+    "domain_id": "C09",
+    "domain": "Visuospatial Intelligence",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C09-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C09-05": {
+    "measurement_id": "C09-05",
+    "level": "I",
+    "domain_id": "C09",
+    "domain": "Visuospatial Intelligence",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C09-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C10-01": {
+    "measurement_id": "C10-01",
+    "level": "I",
+    "domain_id": "C10",
+    "domain": "Learning & Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C10-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C10-02": {
+    "measurement_id": "C10-02",
+    "level": "I",
+    "domain_id": "C10",
+    "domain": "Learning & Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C10-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C10-03": {
+    "measurement_id": "C10-03",
+    "level": "I",
+    "domain_id": "C10",
+    "domain": "Learning & Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C10-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C10-04": {
+    "measurement_id": "C10-04",
+    "level": "I",
+    "domain_id": "C10",
+    "domain": "Learning & Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C10-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C10-05": {
+    "measurement_id": "C10-05",
+    "level": "I",
+    "domain_id": "C10",
+    "domain": "Learning & Memory",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C10-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C11-01": {
+    "measurement_id": "C11-01",
+    "level": "I",
+    "domain_id": "C11",
+    "domain": "Metacognition",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C11-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C11-02": {
+    "measurement_id": "C11-02",
+    "level": "I",
+    "domain_id": "C11",
+    "domain": "Metacognition",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C11-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C11-03": {
+    "measurement_id": "C11-03",
+    "level": "I",
+    "domain_id": "C11",
+    "domain": "Metacognition",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C11-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C11-04": {
+    "measurement_id": "C11-04",
+    "level": "I",
+    "domain_id": "C11",
+    "domain": "Metacognition",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C11-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "C11-05": {
+    "measurement_id": "C11-05",
+    "level": "I",
+    "domain_id": "C11",
+    "domain": "Metacognition",
+    "scientific_status": "E1",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "C11-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R01-01": {
+    "measurement_id": "R01-01",
+    "level": "II",
+    "domain_id": "R01",
+    "domain": "State Regulation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R01-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R01-02": {
+    "measurement_id": "R01-02",
+    "level": "II",
+    "domain_id": "R01",
+    "domain": "State Regulation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R01-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R01-03": {
+    "measurement_id": "R01-03",
+    "level": "II",
+    "domain_id": "R01",
+    "domain": "State Regulation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R01-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R01-04": {
+    "measurement_id": "R01-04",
+    "level": "II",
+    "domain_id": "R01",
+    "domain": "State Regulation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R01-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R01-05": {
+    "measurement_id": "R01-05",
+    "level": "II",
+    "domain_id": "R01",
+    "domain": "State Regulation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R01-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R02-01": {
+    "measurement_id": "R02-01",
+    "level": "II",
+    "domain_id": "R02",
+    "domain": "Cognitive Load",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R02-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R02-02": {
+    "measurement_id": "R02-02",
+    "level": "II",
+    "domain_id": "R02",
+    "domain": "Cognitive Load",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R02-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R02-03": {
+    "measurement_id": "R02-03",
+    "level": "II",
+    "domain_id": "R02",
+    "domain": "Cognitive Load",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R02-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R02-04": {
+    "measurement_id": "R02-04",
+    "level": "II",
+    "domain_id": "R02",
+    "domain": "Cognitive Load",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R02-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R02-05": {
+    "measurement_id": "R02-05",
+    "level": "II",
+    "domain_id": "R02",
+    "domain": "Cognitive Load",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R02-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R03-01": {
+    "measurement_id": "R03-01",
+    "level": "II",
+    "domain_id": "R03",
+    "domain": "Recovery / Resilience",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R03-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R03-02": {
+    "measurement_id": "R03-02",
+    "level": "II",
+    "domain_id": "R03",
+    "domain": "Recovery / Resilience",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R03-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R03-03": {
+    "measurement_id": "R03-03",
+    "level": "II",
+    "domain_id": "R03",
+    "domain": "Recovery / Resilience",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R03-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R03-04": {
+    "measurement_id": "R03-04",
+    "level": "II",
+    "domain_id": "R03",
+    "domain": "Recovery / Resilience",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R03-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R03-05": {
+    "measurement_id": "R03-05",
+    "level": "II",
+    "domain_id": "R03",
+    "domain": "Recovery / Resilience",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R03-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R04-01": {
+    "measurement_id": "R04-01",
+    "level": "II",
+    "domain_id": "R04",
+    "domain": "Strategy Flexibility",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R04-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R04-02": {
+    "measurement_id": "R04-02",
+    "level": "II",
+    "domain_id": "R04",
+    "domain": "Strategy Flexibility",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R04-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R04-03": {
+    "measurement_id": "R04-03",
+    "level": "II",
+    "domain_id": "R04",
+    "domain": "Strategy Flexibility",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R04-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R04-04": {
+    "measurement_id": "R04-04",
+    "level": "II",
+    "domain_id": "R04",
+    "domain": "Strategy Flexibility",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R04-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R04-05": {
+    "measurement_id": "R04-05",
+    "level": "II",
+    "domain_id": "R04",
+    "domain": "Strategy Flexibility",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R04-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R05-01": {
+    "measurement_id": "R05-01",
+    "level": "II",
+    "domain_id": "R05",
+    "domain": "Calibration",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R05-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R05-02": {
+    "measurement_id": "R05-02",
+    "level": "II",
+    "domain_id": "R05",
+    "domain": "Calibration",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R05-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R05-03": {
+    "measurement_id": "R05-03",
+    "level": "II",
+    "domain_id": "R05",
+    "domain": "Calibration",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R05-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R05-04": {
+    "measurement_id": "R05-04",
+    "level": "II",
+    "domain_id": "R05",
+    "domain": "Calibration",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R05-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R05-05": {
+    "measurement_id": "R05-05",
+    "level": "II",
+    "domain_id": "R05",
+    "domain": "Calibration",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R05-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R06-01": {
+    "measurement_id": "R06-01",
+    "level": "II",
+    "domain_id": "R06",
+    "domain": "Adaptation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R06-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R06-02": {
+    "measurement_id": "R06-02",
+    "level": "II",
+    "domain_id": "R06",
+    "domain": "Adaptation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R06-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R06-03": {
+    "measurement_id": "R06-03",
+    "level": "II",
+    "domain_id": "R06",
+    "domain": "Adaptation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R06-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R06-04": {
+    "measurement_id": "R06-04",
+    "level": "II",
+    "domain_id": "R06",
+    "domain": "Adaptation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R06-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R06-05": {
+    "measurement_id": "R06-05",
+    "level": "II",
+    "domain_id": "R06",
+    "domain": "Adaptation",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R06-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R07-01": {
+    "measurement_id": "R07-01",
+    "level": "II",
+    "domain_id": "R07",
+    "domain": "Transfer",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R07-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R07-02": {
+    "measurement_id": "R07-02",
+    "level": "II",
+    "domain_id": "R07",
+    "domain": "Transfer",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R07-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R07-03": {
+    "measurement_id": "R07-03",
+    "level": "II",
+    "domain_id": "R07",
+    "domain": "Transfer",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R07-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R07-04": {
+    "measurement_id": "R07-04",
+    "level": "II",
+    "domain_id": "R07",
+    "domain": "Transfer",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R07-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R07-05": {
+    "measurement_id": "R07-05",
+    "level": "II",
+    "domain_id": "R07",
+    "domain": "Transfer",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R07-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R08-01": {
+    "measurement_id": "R08-01",
+    "level": "II",
+    "domain_id": "R08",
+    "domain": "Decision Quality",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R08-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R08-02": {
+    "measurement_id": "R08-02",
+    "level": "II",
+    "domain_id": "R08",
+    "domain": "Decision Quality",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R08-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R08-03": {
+    "measurement_id": "R08-03",
+    "level": "II",
+    "domain_id": "R08",
+    "domain": "Decision Quality",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R08-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R08-04": {
+    "measurement_id": "R08-04",
+    "level": "II",
+    "domain_id": "R08",
+    "domain": "Decision Quality",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R08-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R08-05": {
+    "measurement_id": "R08-05",
+    "level": "II",
+    "domain_id": "R08",
+    "domain": "Decision Quality",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R08-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R09-01": {
+    "measurement_id": "R09-01",
+    "level": "II",
+    "domain_id": "R09",
+    "domain": "Prospective / Future Model",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R09-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R09-02": {
+    "measurement_id": "R09-02",
+    "level": "II",
+    "domain_id": "R09",
+    "domain": "Prospective / Future Model",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R09-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R09-03": {
+    "measurement_id": "R09-03",
+    "level": "II",
+    "domain_id": "R09",
+    "domain": "Prospective / Future Model",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R09-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R09-04": {
+    "measurement_id": "R09-04",
+    "level": "II",
+    "domain_id": "R09",
+    "domain": "Prospective / Future Model",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R09-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R09-05": {
+    "measurement_id": "R09-05",
+    "level": "II",
+    "domain_id": "R09",
+    "domain": "Prospective / Future Model",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R09-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R10-01": {
+    "measurement_id": "R10-01",
+    "level": "II",
+    "domain_id": "R10",
+    "domain": "Prediction Error / Model Updating",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R10-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R10-02": {
+    "measurement_id": "R10-02",
+    "level": "II",
+    "domain_id": "R10",
+    "domain": "Prediction Error / Model Updating",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R10-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R10-03": {
+    "measurement_id": "R10-03",
+    "level": "II",
+    "domain_id": "R10",
+    "domain": "Prediction Error / Model Updating",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R10-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R10-04": {
+    "measurement_id": "R10-04",
+    "level": "II",
+    "domain_id": "R10",
+    "domain": "Prediction Error / Model Updating",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R10-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R10-05": {
+    "measurement_id": "R10-05",
+    "level": "II",
+    "domain_id": "R10",
+    "domain": "Prediction Error / Model Updating",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R10-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R11-01": {
+    "measurement_id": "R11-01",
+    "level": "II",
+    "domain_id": "R11",
+    "domain": "Accessible Capacity",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R11-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R11-02": {
+    "measurement_id": "R11-02",
+    "level": "II",
+    "domain_id": "R11",
+    "domain": "Accessible Capacity",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R11-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R11-03": {
+    "measurement_id": "R11-03",
+    "level": "II",
+    "domain_id": "R11",
+    "domain": "Accessible Capacity",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R11-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R11-04": {
+    "measurement_id": "R11-04",
+    "level": "II",
+    "domain_id": "R11",
+    "domain": "Accessible Capacity",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R11-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R11-05": {
+    "measurement_id": "R11-05",
+    "level": "II",
+    "domain_id": "R11",
+    "domain": "Accessible Capacity",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R11-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R12-01": {
+    "measurement_id": "R12-01",
+    "level": "II",
+    "domain_id": "R12",
+    "domain": "External Support / Scaffolding",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R12-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R12-02": {
+    "measurement_id": "R12-02",
+    "level": "II",
+    "domain_id": "R12",
+    "domain": "External Support / Scaffolding",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R12-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R12-03": {
+    "measurement_id": "R12-03",
+    "level": "II",
+    "domain_id": "R12",
+    "domain": "External Support / Scaffolding",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R12-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R12-04": {
+    "measurement_id": "R12-04",
+    "level": "II",
+    "domain_id": "R12",
+    "domain": "External Support / Scaffolding",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R12-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "R12-05": {
+    "measurement_id": "R12-05",
+    "level": "II",
+    "domain_id": "R12",
+    "domain": "External Support / Scaffolding",
+    "scientific_status": "E2",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "R12-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H01-01": {
+    "measurement_id": "H01-01",
+    "level": "III",
+    "domain_id": "H01",
+    "domain": "Social Cognition / Social Calibration",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H01-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H01-02": {
+    "measurement_id": "H01-02",
+    "level": "III",
+    "domain_id": "H01",
+    "domain": "Social Cognition / Social Calibration",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H01-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H01-03": {
+    "measurement_id": "H01-03",
+    "level": "III",
+    "domain_id": "H01",
+    "domain": "Social Cognition / Social Calibration",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H01-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H01-04": {
+    "measurement_id": "H01-04",
+    "level": "III",
+    "domain_id": "H01",
+    "domain": "Social Cognition / Social Calibration",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H01-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H01-05": {
+    "measurement_id": "H01-05",
+    "level": "III",
+    "domain_id": "H01",
+    "domain": "Social Cognition / Social Calibration",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H01-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H02-01": {
+    "measurement_id": "H02-01",
+    "level": "III",
+    "domain_id": "H02",
+    "domain": "Agency",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H02-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H02-02": {
+    "measurement_id": "H02-02",
+    "level": "III",
+    "domain_id": "H02",
+    "domain": "Agency",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H02-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H02-03": {
+    "measurement_id": "H02-03",
+    "level": "III",
+    "domain_id": "H02",
+    "domain": "Agency",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H02-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H02-04": {
+    "measurement_id": "H02-04",
+    "level": "III",
+    "domain_id": "H02",
+    "domain": "Agency",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H02-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H02-05": {
+    "measurement_id": "H02-05",
+    "level": "III",
+    "domain_id": "H02",
+    "domain": "Agency",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H02-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H03-01": {
+    "measurement_id": "H03-01",
+    "level": "III",
+    "domain_id": "H03",
+    "domain": "Identity / Self-Model",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H03-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H03-02": {
+    "measurement_id": "H03-02",
+    "level": "III",
+    "domain_id": "H03",
+    "domain": "Identity / Self-Model",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H03-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H03-03": {
+    "measurement_id": "H03-03",
+    "level": "III",
+    "domain_id": "H03",
+    "domain": "Identity / Self-Model",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H03-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H03-04": {
+    "measurement_id": "H03-04",
+    "level": "III",
+    "domain_id": "H03",
+    "domain": "Identity / Self-Model",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H03-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H03-05": {
+    "measurement_id": "H03-05",
+    "level": "III",
+    "domain_id": "H03",
+    "domain": "Identity / Self-Model",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H03-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H04-01": {
+    "measurement_id": "H04-01",
+    "level": "III",
+    "domain_id": "H04",
+    "domain": "Meaning / Meaning Coherence",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H04-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H04-02": {
+    "measurement_id": "H04-02",
+    "level": "III",
+    "domain_id": "H04",
+    "domain": "Meaning / Meaning Coherence",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H04-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H04-03": {
+    "measurement_id": "H04-03",
+    "level": "III",
+    "domain_id": "H04",
+    "domain": "Meaning / Meaning Coherence",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H04-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H04-04": {
+    "measurement_id": "H04-04",
+    "level": "III",
+    "domain_id": "H04",
+    "domain": "Meaning / Meaning Coherence",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H04-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H04-05": {
+    "measurement_id": "H04-05",
+    "level": "III",
+    "domain_id": "H04",
+    "domain": "Meaning / Meaning Coherence",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H04-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H05-01": {
+    "measurement_id": "H05-01",
+    "level": "III",
+    "domain_id": "H05",
+    "domain": "Values–Goals Alignment",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H05-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H05-02": {
+    "measurement_id": "H05-02",
+    "level": "III",
+    "domain_id": "H05",
+    "domain": "Values–Goals Alignment",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H05-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H05-03": {
+    "measurement_id": "H05-03",
+    "level": "III",
+    "domain_id": "H05",
+    "domain": "Values–Goals Alignment",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H05-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H05-04": {
+    "measurement_id": "H05-04",
+    "level": "III",
+    "domain_id": "H05",
+    "domain": "Values–Goals Alignment",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H05-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H05-05": {
+    "measurement_id": "H05-05",
+    "level": "III",
+    "domain_id": "H05",
+    "domain": "Values–Goals Alignment",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H05-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H06-01": {
+    "measurement_id": "H06-01",
+    "level": "III",
+    "domain_id": "H06",
+    "domain": "Developmental Dynamics",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H06-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H06-02": {
+    "measurement_id": "H06-02",
+    "level": "III",
+    "domain_id": "H06",
+    "domain": "Developmental Dynamics",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H06-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H06-03": {
+    "measurement_id": "H06-03",
+    "level": "III",
+    "domain_id": "H06",
+    "domain": "Developmental Dynamics",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H06-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H06-04": {
+    "measurement_id": "H06-04",
+    "level": "III",
+    "domain_id": "H06",
+    "domain": "Developmental Dynamics",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H06-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H06-05": {
+    "measurement_id": "H06-05",
+    "level": "III",
+    "domain_id": "H06",
+    "domain": "Developmental Dynamics",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H06-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H07-01": {
+    "measurement_id": "H07-01",
+    "level": "III",
+    "domain_id": "H07",
+    "domain": "Environment / Context",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H07-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H07-02": {
+    "measurement_id": "H07-02",
+    "level": "III",
+    "domain_id": "H07",
+    "domain": "Environment / Context",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H07-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H07-03": {
+    "measurement_id": "H07-03",
+    "level": "III",
+    "domain_id": "H07",
+    "domain": "Environment / Context",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H07-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H07-04": {
+    "measurement_id": "H07-04",
+    "level": "III",
+    "domain_id": "H07",
+    "domain": "Environment / Context",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H07-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H07-05": {
+    "measurement_id": "H07-05",
+    "level": "III",
+    "domain_id": "H07",
+    "domain": "Environment / Context",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H07-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H08-01": {
+    "measurement_id": "H08-01",
+    "level": "III",
+    "domain_id": "H08",
+    "domain": "Multimodal State",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H08-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H08-02": {
+    "measurement_id": "H08-02",
+    "level": "III",
+    "domain_id": "H08",
+    "domain": "Multimodal State",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H08-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H08-03": {
+    "measurement_id": "H08-03",
+    "level": "III",
+    "domain_id": "H08",
+    "domain": "Multimodal State",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H08-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H08-04": {
+    "measurement_id": "H08-04",
+    "level": "III",
+    "domain_id": "H08",
+    "domain": "Multimodal State",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H08-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H08-05": {
+    "measurement_id": "H08-05",
+    "level": "III",
+    "domain_id": "H08",
+    "domain": "Multimodal State",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H08-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H09-01": {
+    "measurement_id": "H09-01",
+    "level": "III",
+    "domain_id": "H09",
+    "domain": "Cross-Modal Concordance",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H09-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H09-02": {
+    "measurement_id": "H09-02",
+    "level": "III",
+    "domain_id": "H09",
+    "domain": "Cross-Modal Concordance",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H09-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H09-03": {
+    "measurement_id": "H09-03",
+    "level": "III",
+    "domain_id": "H09",
+    "domain": "Cross-Modal Concordance",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H09-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H09-04": {
+    "measurement_id": "H09-04",
+    "level": "III",
+    "domain_id": "H09",
+    "domain": "Cross-Modal Concordance",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H09-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H09-05": {
+    "measurement_id": "H09-05",
+    "level": "III",
+    "domain_id": "H09",
+    "domain": "Cross-Modal Concordance",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H09-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H10-01": {
+    "measurement_id": "H10-01",
+    "level": "III",
+    "domain_id": "H10",
+    "domain": "Neural / Neurophysiological",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H10-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H10-02": {
+    "measurement_id": "H10-02",
+    "level": "III",
+    "domain_id": "H10",
+    "domain": "Neural / Neurophysiological",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H10-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H10-03": {
+    "measurement_id": "H10-03",
+    "level": "III",
+    "domain_id": "H10",
+    "domain": "Neural / Neurophysiological",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H10-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H10-04": {
+    "measurement_id": "H10-04",
+    "level": "III",
+    "domain_id": "H10",
+    "domain": "Neural / Neurophysiological",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H10-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H10-05": {
+    "measurement_id": "H10-05",
+    "level": "III",
+    "domain_id": "H10",
+    "domain": "Neural / Neurophysiological",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H10-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H11-01": {
+    "measurement_id": "H11-01",
+    "level": "III",
+    "domain_id": "H11",
+    "domain": "Biological / Endocrine",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H11-01",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H11-02": {
+    "measurement_id": "H11-02",
+    "level": "III",
+    "domain_id": "H11",
+    "domain": "Biological / Endocrine",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H11-02",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H11-03": {
+    "measurement_id": "H11-03",
+    "level": "III",
+    "domain_id": "H11",
+    "domain": "Biological / Endocrine",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H11-03",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H11-04": {
+    "measurement_id": "H11-04",
+    "level": "III",
+    "domain_id": "H11",
+    "domain": "Biological / Endocrine",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H11-04",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  },
+  "H11-05": {
+    "measurement_id": "H11-05",
+    "level": "III",
+    "domain_id": "H11",
+    "domain": "Biological / Endocrine",
+    "scientific_status": "E3",
+    "implementation_maturity": "SPECIFIED",
+    "task_family": "H11-05",
+    "primary_outcome": "task_score",
+    "required_modalities": [
+      "behavioral"
+    ],
+    "optional_modalities": []
+  }
+}

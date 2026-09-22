@@ -1,0 +1,19 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Scientific Claim Governance Engine v1.0",
+  "lifecycle": [
+    "CANDIDATE",
+    "SUPPORTED",
+    "CONDITIONAL",
+    "VALIDATED",
+    "CONTRADICTED",
+    "REVISED",
+    "BLOCKED"
+  ],
+  "validated_requires": [
+    "explicit_evidence_refs",
+    "valid_transition"
+  ],
+  "automatic_truth_inference": false
+}

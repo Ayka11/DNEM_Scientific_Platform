@@ -1,0 +1,1218 @@
+[
+  {
+    "path": ".gitignore",
+    "size": 64
+  },
+  {
+    "path": "ANALYSIS_PROVENANCE_MANIFEST.json",
+    "size": 261
+  },
+  {
+    "path": "ANALYSIS_PROVENANCE_RELEASE_NOTES_v1.0.md",
+    "size": 708
+  },
+  {
+    "path": "BLINDING_DATA_LOCK_MANIFEST.json",
+    "size": 278
+  },
+  {
+    "path": "DNEM_RELEASE_MANIFEST_v7.7.json",
+    "size": 1028
+  },
+  {
+    "path": "DOMAIN_RESULTS_ENGINE_MANIFEST.json",
+    "size": 253
+  },
+  {
+    "path": "Dockerfile",
+    "size": 186
+  },
+  {
+    "path": "EFFECT_SIZE_UNCERTAINTY_GOVERNANCE_MANIFEST.json",
+    "size": 342
+  },
+  {
+    "path": "EVIDENCE_CLAIM_GRAPH_V2_MANIFEST.json",
+    "size": 409
+  },
+  {
+    "path": "LICENSE",
+    "size": 71
+  },
+  {
+    "path": "MISSING_DATA_EXCLUSION_GOVERNANCE_MANIFEST.json",
+    "size": 295
+  },
+  {
+    "path": "MODEL_REVISION_LINEAGE_v2.0.md",
+    "size": 1502
+  },
+  {
+    "path": "MULTIPLICITY_STATISTICAL_DECISION_GOVERNANCE_MANIFEST.json",
+    "size": 315
+  },
+  {
+    "path": "OPERATIONAL_SPECIFICATIONS_MANIFEST.json",
+    "size": 302
+  },
+  {
+    "path": "PREREGISTRATION_LOCK_INTEGRATION_v1.0.md",
+    "size": 701
+  },
+  {
+    "path": "PREREGISTRATION_PROTOCOL_LOCK_MANIFEST.json",
+    "size": 385
+  },
+  {
+    "path": "PRODUCTION_RELEASE_v7.7.md",
+    "size": 1260
+  },
+  {
+    "path": "PROTOCOL_INHERITANCE_AMENDMENT_ENGINE_v1.0.md",
+    "size": 805
+  },
+  {
+    "path": "PSYCHOMETRIC_VALIDATION_ENGINE_MANIFEST.json",
+    "size": 365
+  },
+  {
+    "path": "README.md",
+    "size": 1714
+  },
+  {
+    "path": "RELEASE_MANIFEST.json",
+    "size": 276
+  },
+  {
+    "path": "REPLICATION_GENERALIZATION_MANIFEST.json",
+    "size": 304
+  },
+  {
+    "path": "RESEARCH_CYCLE_SUCCESSOR_EXECUTOR_v1.0.md",
+    "size": 1262
+  },
+  {
+    "path": "RESEARCH_REGISTRY_VERSIONING_MANIFEST.json",
+    "size": 329
+  },
+  {
+    "path": "RESEARCH_RUNTIME_RELEASE_MANIFEST.json",
+    "size": 283
+  },
+  {
+    "path": "SCIENTIFIC_AUDIT_REPRODUCIBILITY_MANIFEST.json",
+    "size": 351
+  },
+  {
+    "path": "SCIENTIFIC_CLAIM_GOVERNANCE_MANIFEST.json",
+    "size": 361
+  },
+  {
+    "path": "SCIENTIFIC_VALIDATION_ORCHESTRATOR_MANIFEST.json",
+    "size": 390
+  },
+  {
+    "path": "SENSITIVITY_ROBUSTNESS_ANALYSIS_MANIFEST.json",
+    "size": 264
+  },
+  {
+    "path": "STATISTICAL_ANALYSIS_PLAN_EXECUTOR_MANIFEST.json",
+    "size": 358
+  },
+  {
+    "path": "VALIDATION_GATE_ENGINE_MANIFEST.json",
+    "size": 297
+  },
+  {
+    "path": "app/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/__pycache__/__init__.cpython-313.pyc",
+    "size": 112
+  },
+  {
+    "path": "app/__pycache__/main.cpython-313.pyc",
+    "size": 153
+  },
+  {
+    "path": "app/__pycache__/release.cpython-313.pyc",
+    "size": 233
+  },
+  {
+    "path": "app/analysis/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/analysis/__pycache__/__init__.cpython-313.pyc",
+    "size": 121
+  },
+  {
+    "path": "app/analysis/__pycache__/domain_results_engine.cpython-313.pyc",
+    "size": 3585
+  },
+  {
+    "path": "app/analysis/__pycache__/engine.cpython-313.pyc",
+    "size": 739
+  },
+  {
+    "path": "app/analysis/domain_results_engine.py",
+    "size": 2388
+  },
+  {
+    "path": "app/analysis/engine.py",
+    "size": 253
+  },
+  {
+    "path": "app/api/__init__.py",
+    "size": 24
+  },
+  {
+    "path": "app/api/__pycache__/__init__.cpython-313.pyc",
+    "size": 153
+  },
+  {
+    "path": "app/api/__pycache__/research_api.cpython-313.pyc",
+    "size": 4990
+  },
+  {
+    "path": "app/api/__pycache__/server.cpython-313.pyc",
+    "size": 8754
+  },
+  {
+    "path": "app/api/research_api.py",
+    "size": 2766
+  },
+  {
+    "path": "app/api/server.py",
+    "size": 6846
+  },
+  {
+    "path": "app/domain/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/domain/__pycache__/__init__.cpython-313.pyc",
+    "size": 119
+  },
+  {
+    "path": "app/domain/__pycache__/models.cpython-313.pyc",
+    "size": 1880
+  },
+  {
+    "path": "app/domain/models.py",
+    "size": 691
+  },
+  {
+    "path": "app/evidence/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/evidence/__pycache__/__init__.cpython-313.pyc",
+    "size": 121
+  },
+  {
+    "path": "app/evidence/__pycache__/claim_graph_api.cpython-313.pyc",
+    "size": 1083
+  },
+  {
+    "path": "app/evidence/__pycache__/claim_graph_v2.cpython-313.pyc",
+    "size": 8515
+  },
+  {
+    "path": "app/evidence/__pycache__/evidence_claim_graph_integration.cpython-313.pyc",
+    "size": 3931
+  },
+  {
+    "path": "app/evidence/__pycache__/evidence_claim_graph_integration_api.cpython-313.pyc",
+    "size": 1591
+  },
+  {
+    "path": "app/evidence/__pycache__/graph.cpython-313.pyc",
+    "size": 1318
+  },
+  {
+    "path": "app/evidence/claim_graph_api.py",
+    "size": 493
+  },
+  {
+    "path": "app/evidence/claim_graph_v2.py",
+    "size": 4662
+  },
+  {
+    "path": "app/evidence/evidence_claim_graph_integration.py",
+    "size": 2993
+  },
+  {
+    "path": "app/evidence/evidence_claim_graph_integration_api.py",
+    "size": 771
+  },
+  {
+    "path": "app/evidence/graph.py",
+    "size": 554
+  },
+  {
+    "path": "app/governance/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/governance/__pycache__/__init__.cpython-313.pyc",
+    "size": 123
+  },
+  {
+    "path": "app/governance/__pycache__/analysis_governance_bridge.cpython-313.pyc",
+    "size": 3247
+  },
+  {
+    "path": "app/governance/__pycache__/analysis_governance_bridge_api.cpython-313.pyc",
+    "size": 2499
+  },
+  {
+    "path": "app/governance/__pycache__/claim_governance.cpython-313.pyc",
+    "size": 5277
+  },
+  {
+    "path": "app/governance/__pycache__/claim_governance_api.cpython-313.pyc",
+    "size": 1756
+  },
+  {
+    "path": "app/governance/__pycache__/claim_governance_binding.cpython-313.pyc",
+    "size": 4402
+  },
+  {
+    "path": "app/governance/__pycache__/claim_governance_binding_api.cpython-313.pyc",
+    "size": 1636
+  },
+  {
+    "path": "app/governance/__pycache__/live_research_governance_adapter.cpython-313.pyc",
+    "size": 2621
+  },
+  {
+    "path": "app/governance/__pycache__/live_research_governance_api.cpython-313.pyc",
+    "size": 2638
+  },
+  {
+    "path": "app/governance/__pycache__/manifest.cpython-313.pyc",
+    "size": 1130
+  },
+  {
+    "path": "app/governance/__pycache__/model_revision_api.cpython-313.pyc",
+    "size": 1394
+  },
+  {
+    "path": "app/governance/__pycache__/model_revision_engine.cpython-313.pyc",
+    "size": 2865
+  },
+  {
+    "path": "app/governance/__pycache__/model_revision_lineage_api.cpython-313.pyc",
+    "size": 3420
+  },
+  {
+    "path": "app/governance/__pycache__/model_revision_lineage_engine.cpython-313.pyc",
+    "size": 12332
+  },
+  {
+    "path": "app/governance/__pycache__/persisted_session_governance.cpython-313.pyc",
+    "size": 4616
+  },
+  {
+    "path": "app/governance/__pycache__/persisted_session_governance_api.cpython-313.pyc",
+    "size": 2761
+  },
+  {
+    "path": "app/governance/__pycache__/preregistration_lock_api.cpython-313.pyc",
+    "size": 3452
+  },
+  {
+    "path": "app/governance/__pycache__/preregistration_lock_integration.cpython-313.pyc",
+    "size": 8508
+  },
+  {
+    "path": "app/governance/__pycache__/release_gate.cpython-313.pyc",
+    "size": 723
+  },
+  {
+    "path": "app/governance/__pycache__/research_governance_runtime.cpython-313.pyc",
+    "size": 3369
+  },
+  {
+    "path": "app/governance/__pycache__/research_governance_runtime_api.cpython-313.pyc",
+    "size": 2211
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit.cpython-313.pyc",
+    "size": 3976
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_api.cpython-313.pyc",
+    "size": 1350
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_console.cpython-313.pyc",
+    "size": 2932
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_console_api.cpython-313.pyc",
+    "size": 1424
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_gradio.cpython-313.pyc",
+    "size": 3310
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_gradio_api.cpython-313.pyc",
+    "size": 695
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_snapshot.cpython-313.pyc",
+    "size": 5364
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_audit_snapshot_api.cpython-313.pyc",
+    "size": 1423
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_decision_ledger.cpython-313.pyc",
+    "size": 8296
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_decision_ledger_api.cpython-313.pyc",
+    "size": 1612
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_decision_ledger_binding.cpython-313.pyc",
+    "size": 4704
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_decision_ledger_binding_api.cpython-313.pyc",
+    "size": 1959
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_decision_pipeline.cpython-313.pyc",
+    "size": 4165
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_decision_pipeline_api.cpython-313.pyc",
+    "size": 1415
+  },
+  {
+    "path": "app/governance/__pycache__/scientific_ledger.cpython-313.pyc",
+    "size": 1396
+  },
+  {
+    "path": "app/governance/__pycache__/session_governance_api.cpython-313.pyc",
+    "size": 3926
+  },
+  {
+    "path": "app/governance/__pycache__/unified_research_governance_api.cpython-313.pyc",
+    "size": 2111
+  },
+  {
+    "path": "app/governance/__pycache__/unified_research_governance_runtime.cpython-313.pyc",
+    "size": 3048
+  },
+  {
+    "path": "app/governance/analysis_governance_bridge.py",
+    "size": 2804
+  },
+  {
+    "path": "app/governance/analysis_governance_bridge_api.py",
+    "size": 1447
+  },
+  {
+    "path": "app/governance/claim_governance.py",
+    "size": 3324
+  },
+  {
+    "path": "app/governance/claim_governance_api.py",
+    "size": 883
+  },
+  {
+    "path": "app/governance/claim_governance_binding.py",
+    "size": 2910
+  },
+  {
+    "path": "app/governance/claim_governance_binding_api.py",
+    "size": 775
+  },
+  {
+    "path": "app/governance/live_research_governance_adapter.py",
+    "size": 2274
+  },
+  {
+    "path": "app/governance/live_research_governance_api.py",
+    "size": 1426
+  },
+  {
+    "path": "app/governance/manifest.py",
+    "size": 567
+  },
+  {
+    "path": "app/governance/model_revision_api.py",
+    "size": 600
+  },
+  {
+    "path": "app/governance/model_revision_engine.py",
+    "size": 1975
+  },
+  {
+    "path": "app/governance/model_revision_lineage_api.py",
+    "size": 1953
+  },
+  {
+    "path": "app/governance/model_revision_lineage_engine.py",
+    "size": 10657
+  },
+  {
+    "path": "app/governance/persisted_session_governance.py",
+    "size": 4223
+  },
+  {
+    "path": "app/governance/persisted_session_governance_api.py",
+    "size": 1503
+  },
+  {
+    "path": "app/governance/preregistration_lock_api.py",
+    "size": 1527
+  },
+  {
+    "path": "app/governance/preregistration_lock_integration.py",
+    "size": 5732
+  },
+  {
+    "path": "app/governance/release_gate.py",
+    "size": 521
+  },
+  {
+    "path": "app/governance/research_governance_runtime.py",
+    "size": 2375
+  },
+  {
+    "path": "app/governance/research_governance_runtime_api.py",
+    "size": 1103
+  },
+  {
+    "path": "app/governance/scientific_audit.py",
+    "size": 2563
+  },
+  {
+    "path": "app/governance/scientific_audit_api.py",
+    "size": 580
+  },
+  {
+    "path": "app/governance/scientific_audit_console.py",
+    "size": 2327
+  },
+  {
+    "path": "app/governance/scientific_audit_console_api.py",
+    "size": 617
+  },
+  {
+    "path": "app/governance/scientific_audit_gradio.py",
+    "size": 2394
+  },
+  {
+    "path": "app/governance/scientific_audit_gradio_api.py",
+    "size": 408
+  },
+  {
+    "path": "app/governance/scientific_audit_snapshot.py",
+    "size": 3659
+  },
+  {
+    "path": "app/governance/scientific_audit_snapshot_api.py",
+    "size": 645
+  },
+  {
+    "path": "app/governance/scientific_decision_ledger.py",
+    "size": 5467
+  },
+  {
+    "path": "app/governance/scientific_decision_ledger_api.py",
+    "size": 604
+  },
+  {
+    "path": "app/governance/scientific_decision_ledger_binding.py",
+    "size": 3357
+  },
+  {
+    "path": "app/governance/scientific_decision_ledger_binding_api.py",
+    "size": 1002
+  },
+  {
+    "path": "app/governance/scientific_decision_pipeline.py",
+    "size": 3812
+  },
+  {
+    "path": "app/governance/scientific_decision_pipeline_api.py",
+    "size": 644
+  },
+  {
+    "path": "app/governance/scientific_ledger.py",
+    "size": 645
+  },
+  {
+    "path": "app/governance/session_governance_api.py",
+    "size": 3142
+  },
+  {
+    "path": "app/governance/unified_research_governance_api.py",
+    "size": 1097
+  },
+  {
+    "path": "app/governance/unified_research_governance_runtime.py",
+    "size": 2235
+  },
+  {
+    "path": "app/main.py",
+    "size": 31
+  },
+  {
+    "path": "app/measurements/__init__.py",
+    "size": 67
+  },
+  {
+    "path": "app/measurements/__pycache__/__init__.cpython-313.pyc",
+    "size": 226
+  },
+  {
+    "path": "app/measurements/__pycache__/registry.cpython-313.pyc",
+    "size": 2994
+  },
+  {
+    "path": "app/measurements/__pycache__/specification_registry.cpython-313.pyc",
+    "size": 2729
+  },
+  {
+    "path": "app/measurements/operational_specifications_170.json",
+    "size": 1368712
+  },
+  {
+    "path": "app/measurements/operational_specifications_170.yaml",
+    "size": 115213
+  },
+  {
+    "path": "app/measurements/registry.py",
+    "size": 2583
+  },
+  {
+    "path": "app/measurements/specification_registry.py",
+    "size": 1415
+  },
+  {
+    "path": "app/release.py",
+    "size": 107
+  },
+  {
+    "path": "app/research/__pycache__/analysis_integrity.cpython-313.pyc",
+    "size": 9469
+  },
+  {
+    "path": "app/research/__pycache__/analysis_integrity_api.cpython-313.pyc",
+    "size": 1747
+  },
+  {
+    "path": "app/research/__pycache__/analysis_provenance.cpython-313.pyc",
+    "size": 3423
+  },
+  {
+    "path": "app/research/__pycache__/analysis_provenance_api.cpython-313.pyc",
+    "size": 2692
+  },
+  {
+    "path": "app/research/__pycache__/blinding_data_lock.cpython-313.pyc",
+    "size": 5054
+  },
+  {
+    "path": "app/research/__pycache__/blinding_data_lock_api.cpython-313.pyc",
+    "size": 2073
+  },
+  {
+    "path": "app/research/__pycache__/dataset_analysis_pipeline.cpython-313.pyc",
+    "size": 4387
+  },
+  {
+    "path": "app/research/__pycache__/dataset_analysis_pipeline_api.cpython-313.pyc",
+    "size": 1595
+  },
+  {
+    "path": "app/research/__pycache__/dataset_ingestion.cpython-313.pyc",
+    "size": 5647
+  },
+  {
+    "path": "app/research/__pycache__/dataset_ingestion_api.cpython-313.pyc",
+    "size": 1995
+  },
+  {
+    "path": "app/research/__pycache__/effect_uncertainty_api.cpython-313.pyc",
+    "size": 1712
+  },
+  {
+    "path": "app/research/__pycache__/effect_uncertainty_governance.cpython-313.pyc",
+    "size": 3600
+  },
+  {
+    "path": "app/research/__pycache__/end_to_end_research_cycle.cpython-313.pyc",
+    "size": 4949
+  },
+  {
+    "path": "app/research/__pycache__/end_to_end_research_cycle_api.cpython-313.pyc",
+    "size": 2311
+  },
+  {
+    "path": "app/research/__pycache__/exclusion_governance.cpython-313.pyc",
+    "size": 5151
+  },
+  {
+    "path": "app/research/__pycache__/exclusion_governance_api.cpython-313.pyc",
+    "size": 2107
+  },
+  {
+    "path": "app/research/__pycache__/experimental_workspace.cpython-313.pyc",
+    "size": 2995
+  },
+  {
+    "path": "app/research/__pycache__/experimental_workspace_api.cpython-313.pyc",
+    "size": 2557
+  },
+  {
+    "path": "app/research/__pycache__/multiplicity_governance.cpython-313.pyc",
+    "size": 5811
+  },
+  {
+    "path": "app/research/__pycache__/multiplicity_governance_api.cpython-313.pyc",
+    "size": 1215
+  },
+  {
+    "path": "app/research/__pycache__/preregistration.cpython-313.pyc",
+    "size": 4264
+  },
+  {
+    "path": "app/research/__pycache__/preregistration_api.cpython-313.pyc",
+    "size": 1915
+  },
+  {
+    "path": "app/research/__pycache__/protocol_inheritance_amendment_api.cpython-313.pyc",
+    "size": 4101
+  },
+  {
+    "path": "app/research/__pycache__/protocol_inheritance_amendment_engine.cpython-313.pyc",
+    "size": 9017
+  },
+  {
+    "path": "app/research/__pycache__/research_cycle_successor_api.cpython-313.pyc",
+    "size": 2736
+  },
+  {
+    "path": "app/research/__pycache__/research_cycle_successor_executor.cpython-313.pyc",
+    "size": 8183
+  },
+  {
+    "path": "app/research/__pycache__/research_registry.cpython-313.pyc",
+    "size": 5021
+  },
+  {
+    "path": "app/research/__pycache__/research_registry_api.cpython-313.pyc",
+    "size": 1816
+  },
+  {
+    "path": "app/research/__pycache__/scientific_evidence_registry.cpython-313.pyc",
+    "size": 4008
+  },
+  {
+    "path": "app/research/__pycache__/scientific_evidence_registry_api.cpython-313.pyc",
+    "size": 2657
+  },
+  {
+    "path": "app/research/__pycache__/sensitivity_robustness.cpython-313.pyc",
+    "size": 3819
+  },
+  {
+    "path": "app/research/__pycache__/sensitivity_robustness_api.cpython-313.pyc",
+    "size": 1655
+  },
+  {
+    "path": "app/research/__pycache__/statistical_plan_executor.cpython-313.pyc",
+    "size": 3297
+  },
+  {
+    "path": "app/research/__pycache__/statistical_plan_executor_api.cpython-313.pyc",
+    "size": 1889
+  },
+  {
+    "path": "app/research/analysis_integrity.py",
+    "size": 7547
+  },
+  {
+    "path": "app/research/analysis_integrity_api.py",
+    "size": 877
+  },
+  {
+    "path": "app/research/analysis_provenance.py",
+    "size": 2132
+  },
+  {
+    "path": "app/research/analysis_provenance_api.py",
+    "size": 1375
+  },
+  {
+    "path": "app/research/blinding_data_lock.py",
+    "size": 2904
+  },
+  {
+    "path": "app/research/blinding_data_lock_api.py",
+    "size": 919
+  },
+  {
+    "path": "app/research/dataset_analysis_pipeline.py",
+    "size": 3063
+  },
+  {
+    "path": "app/research/dataset_analysis_pipeline_api.py",
+    "size": 739
+  },
+  {
+    "path": "app/research/dataset_ingestion.py",
+    "size": 4291
+  },
+  {
+    "path": "app/research/dataset_ingestion_api.py",
+    "size": 892
+  },
+  {
+    "path": "app/research/effect_uncertainty_api.py",
+    "size": 796
+  },
+  {
+    "path": "app/research/effect_uncertainty_governance.py",
+    "size": 2002
+  },
+  {
+    "path": "app/research/end_to_end_research_cycle.py",
+    "size": 4119
+  },
+  {
+    "path": "app/research/end_to_end_research_cycle_api.py",
+    "size": 1083
+  },
+  {
+    "path": "app/research/exclusion_governance.py",
+    "size": 2799
+  },
+  {
+    "path": "app/research/exclusion_governance_api.py",
+    "size": 1081
+  },
+  {
+    "path": "app/research/experimental_workspace.py",
+    "size": 2073
+  },
+  {
+    "path": "app/research/experimental_workspace_api.py",
+    "size": 1238
+  },
+  {
+    "path": "app/research/multiplicity_governance.py",
+    "size": 3049
+  },
+  {
+    "path": "app/research/multiplicity_governance_api.py",
+    "size": 566
+  },
+  {
+    "path": "app/research/preregistration.py",
+    "size": 2809
+  },
+  {
+    "path": "app/research/preregistration_api.py",
+    "size": 882
+  },
+  {
+    "path": "app/research/protocol_inheritance_amendment_api.py",
+    "size": 1851
+  },
+  {
+    "path": "app/research/protocol_inheritance_amendment_engine.py",
+    "size": 6370
+  },
+  {
+    "path": "app/research/research_cycle_successor_api.py",
+    "size": 1503
+  },
+  {
+    "path": "app/research/research_cycle_successor_executor.py",
+    "size": 6943
+  },
+  {
+    "path": "app/research/research_registry.py",
+    "size": 2766
+  },
+  {
+    "path": "app/research/research_registry_api.py",
+    "size": 895
+  },
+  {
+    "path": "app/research/scientific_evidence_registry.py",
+    "size": 2512
+  },
+  {
+    "path": "app/research/scientific_evidence_registry_api.py",
+    "size": 1290
+  },
+  {
+    "path": "app/research/sensitivity_robustness.py",
+    "size": 2298
+  },
+  {
+    "path": "app/research/sensitivity_robustness_api.py",
+    "size": 745
+  },
+  {
+    "path": "app/research/statistical_plan_executor.py",
+    "size": 2144
+  },
+  {
+    "path": "app/research/statistical_plan_executor_api.py",
+    "size": 823
+  },
+  {
+    "path": "app/runtime/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/runtime/__pycache__/__init__.cpython-313.pyc",
+    "size": 120
+  },
+  {
+    "path": "app/runtime/__pycache__/event_bus.cpython-313.pyc",
+    "size": 1761
+  },
+  {
+    "path": "app/runtime/__pycache__/protocol_engine.cpython-313.pyc",
+    "size": 2169
+  },
+  {
+    "path": "app/runtime/__pycache__/state_machine.cpython-313.pyc",
+    "size": 1534
+  },
+  {
+    "path": "app/runtime/__pycache__/trial_executor.cpython-313.pyc",
+    "size": 1618
+  },
+  {
+    "path": "app/runtime/event_bus.py",
+    "size": 810
+  },
+  {
+    "path": "app/runtime/protocol_engine.py",
+    "size": 1648
+  },
+  {
+    "path": "app/runtime/state_machine.py",
+    "size": 964
+  },
+  {
+    "path": "app/runtime/trial_executor.py",
+    "size": 921
+  },
+  {
+    "path": "app/services/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/services/__pycache__/__init__.cpython-313.pyc",
+    "size": 121
+  },
+  {
+    "path": "app/services/__pycache__/persistence.cpython-313.pyc",
+    "size": 13142
+  },
+  {
+    "path": "app/services/__pycache__/persistent_research_runtime.cpython-313.pyc",
+    "size": 2821
+  },
+  {
+    "path": "app/services/__pycache__/research_runtime.cpython-313.pyc",
+    "size": 1539
+  },
+  {
+    "path": "app/services/__pycache__/results_pipeline.cpython-313.pyc",
+    "size": 2723
+  },
+  {
+    "path": "app/services/__pycache__/results_service.cpython-313.pyc",
+    "size": 1079
+  },
+  {
+    "path": "app/services/__pycache__/runtime_service.cpython-313.pyc",
+    "size": 3620
+  },
+  {
+    "path": "app/services/__pycache__/study_service.cpython-313.pyc",
+    "size": 1575
+  },
+  {
+    "path": "app/services/persistence.py",
+    "size": 7907
+  },
+  {
+    "path": "app/services/persistent_research_runtime.py",
+    "size": 1683
+  },
+  {
+    "path": "app/services/research_runtime.py",
+    "size": 845
+  },
+  {
+    "path": "app/services/results_pipeline.py",
+    "size": 1558
+  },
+  {
+    "path": "app/services/results_service.py",
+    "size": 570
+  },
+  {
+    "path": "app/services/runtime_service.py",
+    "size": 1988
+  },
+  {
+    "path": "app/services/study_service.py",
+    "size": 700
+  },
+  {
+    "path": "app/validation/__init__.py",
+    "size": 0
+  },
+  {
+    "path": "app/validation/__pycache__/__init__.cpython-313.pyc",
+    "size": 123
+  },
+  {
+    "path": "app/validation/__pycache__/engine.cpython-313.pyc",
+    "size": 674
+  },
+  {
+    "path": "app/validation/__pycache__/evidence_thresholds.cpython-313.pyc",
+    "size": 2159
+  },
+  {
+    "path": "app/validation/__pycache__/gate_engine.cpython-313.pyc",
+    "size": 2965
+  },
+  {
+    "path": "app/validation/__pycache__/invariance_engine.cpython-313.pyc",
+    "size": 2043
+  },
+  {
+    "path": "app/validation/__pycache__/psychometrics_engine.cpython-313.pyc",
+    "size": 9355
+  },
+  {
+    "path": "app/validation/__pycache__/replication_engine.cpython-313.pyc",
+    "size": 5240
+  },
+  {
+    "path": "app/validation/__pycache__/scientific_orchestrator.cpython-313.pyc",
+    "size": 4074
+  },
+  {
+    "path": "app/validation/engine.py",
+    "size": 271
+  },
+  {
+    "path": "app/validation/evidence_thresholds.py",
+    "size": 1816
+  },
+  {
+    "path": "app/validation/gate_engine.py",
+    "size": 1594
+  },
+  {
+    "path": "app/validation/invariance_engine.py",
+    "size": 1060
+  },
+  {
+    "path": "app/validation/psychometrics_engine.py",
+    "size": 5113
+  },
+  {
+    "path": "app/validation/replication_engine.py",
+    "size": 3394
+  },
+  {
+    "path": "app/validation/scientific_orchestrator.py",
+    "size": 2576
+  },
+  {
+    "path": "app.py",
+    "size": 70
+  },
+  {
+    "path": "configs/default.yaml",
+    "size": 207
+  },
+  {
+    "path": "data/.gitkeep",
+    "size": 0
+  },
+  {
+    "path": "data/dnem.sqlite3",
+    "size": 126976
+  },
+  {
+    "path": "dnem_scientific_ledger.sqlite",
+    "size": 20480
+  },
+  {
+    "path": "docs/BLINDING_DATA_LOCK_v1.0.md",
+    "size": 532
+  },
+  {
+    "path": "docs/DOMAIN_RESULTS_ENGINE_v1.0.md",
+    "size": 1029
+  },
+  {
+    "path": "docs/EFFECT_SIZE_UNCERTAINTY_GOVERNANCE_v1.0.md",
+    "size": 740
+  },
+  {
+    "path": "docs/EVIDENCE_CLAIM_GRAPH_v2.0.md",
+    "size": 1013
+  },
+  {
+    "path": "docs/IMPLEMENTATION_STATUS.md",
+    "size": 574
+  },
+  {
+    "path": "docs/MISSING_DATA_EXCLUSION_GOVERNANCE_v1.0.md",
+    "size": 759
+  },
+  {
+    "path": "docs/MULTIPLICITY_STATISTICAL_DECISION_GOVERNANCE_v1.0.md",
+    "size": 588
+  },
+  {
+    "path": "docs/OPERATIONAL_SPECIFICATIONS_170.md",
+    "size": 718
+  },
+  {
+    "path": "docs/PREREGISTRATION_PROTOCOL_LOCK_v1.0.md",
+    "size": 800
+  },
+  {
+    "path": "docs/PSYCHOMETRIC_VALIDATION_ENGINE_v1.0.md",
+    "size": 867
+  },
+  {
+    "path": "docs/REPLICATION_GENERALIZATION_ENGINE_v1.0.md",
+    "size": 875
+  },
+  {
+    "path": "docs/RESEARCH_REGISTRY_VERSIONING_v1.0.md",
+    "size": 665
+  },
+  {
+    "path": "docs/RESEARCH_RUNTIME_v1.0.md",
+    "size": 845
+  },
+  {
+    "path": "docs/SCIENTIFIC_AUDIT_REPRODUCIBILITY_v1.0.md",
+    "size": 768
+  },
+  {
+    "path": "docs/SCIENTIFIC_CLAIM_GOVERNANCE_v1.0.md",
+    "size": 951
+  },
+  {
+    "path": "docs/SCIENTIFIC_VALIDATION_ORCHESTRATOR_v1.0.md",
+    "size": 1059
+  },
+  {
+    "path": "docs/SENSITIVITY_ROBUSTNESS_ANALYSIS_v1.0.md",
+    "size": 597
+  },
+  {
+    "path": "docs/STATISTICAL_ANALYSIS_PLAN_EXECUTOR_v1.0.md",
+    "size": 568
+  },
+  {
+    "path": "docs/VALIDATION_GATE_ENGINE_v1.0.md",
+    "size": 518
+  },
+  {
+    "path": "requirements.txt",
+    "size": 89
+  },
+  {
+    "path": "schemas/measurement_registry.json",
+    "size": 60817
+  },
+  {
+    "path": "schemas/study.schema.json",
+    "size": 333
+  },
+  {
+    "path": "scripts/print_manifest.py",
+    "size": 168
+  },
+  {
+    "path": "test_analysis_provenance.py",
+    "size": 1120
+  },
+  {
+    "path": "tests/test_analysis_governance_bridge.py",
+    "size": 1446
+  },
+  {
+    "path": "tests/test_claim_governance_binding.py",
+    "size": 1405
+  },
+  {
+    "path": "tests/test_end_to_end_research_cycle.py",
+    "size": 1277
+  },
+  {
+    "path": "tests/test_evidence_claim_graph_integration.py",
+    "size": 1194
+  },
+  {
+    "path": "tests/test_model_revision_lineage_v2.py",
+    "size": 1249
+  },
+  {
+    "path": "tests/test_preregistration_lock.py",
+    "size": 437
+  },
+  {
+    "path": "tests/test_production_integration.py",
+    "size": 1877
+  },
+  {
+    "path": "tests/test_protocol_lineage.py",
+    "size": 844
+  },
+  {
+    "path": "tests/test_research_cycle_successor.py",
+    "size": 557
+  },
+  {
+    "path": "tests/test_scientific_audit_snapshot.py",
+    "size": 1362
+  },
+  {
+    "path": "tests/test_scientific_decision_ledger_binding.py",
+    "size": 1388
+  },
+  {
+    "path": "tests/test_scientific_evidence_registry.py",
+    "size": 989
+  },
+  {
+    "path": "ui/app.py",
+    "size": 10761
+  },
+  {
+    "path": "ui/research_ui.py",
+    "size": 1167
+  }
+]

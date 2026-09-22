@@ -1,0 +1,13 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Replication & Generalization Engine v1.0",
+  "components": [
+    "independent_replication",
+    "cross_sample_generalization",
+    "subgroup_consistency",
+    "invariance_screen"
+  ],
+  "default_auto_pass": false,
+  "scientific_validation": false
+}

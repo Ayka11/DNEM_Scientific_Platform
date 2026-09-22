@@ -1,0 +1,22 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Evidence & Claim Graph v2.0",
+  "relations": [
+    "DERIVED_FROM",
+    "TESTS",
+    "SUPPORTS",
+    "CONTRADICTS",
+    "BLOCKS",
+    "SATISFIES",
+    "REVISES"
+  ],
+  "governance_states": [
+    "UNSUPPORTED",
+    "SUPPORTED_EDGE_ONLY",
+    "SUPPORTED_BY_GRAPH",
+    "BLOCKED"
+  ],
+  "graph_hash": "SHA-256",
+  "claim_promotion_from_graph_alone": false
+}

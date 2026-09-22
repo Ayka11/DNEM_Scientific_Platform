@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "measurement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seed": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Statistical Analysis Plan Executor v1.0",
+  "tracked_fields": [
+    "primary_test",
+    "secondary_tests",
+    "alpha",
+    "effect_measure",
+    "missing_data_method",
+    "exclusion_rule_ids"
+  ],
+  "deviation_tracking": true,
+  "automatic_scientific_approval": false,
+  "integrity_hash": "SHA-256"
+}

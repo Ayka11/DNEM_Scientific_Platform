@@ -1,0 +1,14 @@
+{
+  "project": "DNEM",
+  "version": "v7.7",
+  "stage": "Effect Size & Uncertainty Governance Engine v1.0",
+  "outputs": [
+    "raw_effect",
+    "standardized_effect",
+    "standard_error",
+    "confidence_interval"
+  ],
+  "default_interpretation": "DESCRIPTIVE",
+  "automatic_scientific_importance": false,
+  "automatic_causal_claim": false
+}

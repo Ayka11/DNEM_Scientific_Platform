@@ -1,0 +1,11 @@
+project: DNEM
+version: v7.7
+runtime:
+  seed: 20260922
+  deterministic_demo: true
+scientific:
+  status: implementation_baseline
+  validated: false
+deployment:
+  target: huggingface_spaces
+  interface: gradio

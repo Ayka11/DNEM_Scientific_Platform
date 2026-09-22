@@ -1,0 +1,35 @@
+{
+  "product": "DNEM Scientific Platform",
+  "release": "7.7-production-integrated",
+  "release_version": "7.7",
+  "architecture_status": "INTEGRATED",
+  "scientific_validation_status": "GOVERNED_NOT_AUTOMATICALLY_VALIDATED",
+  "lineage": [
+    "Measurement Specification",
+    "Task Runtime",
+    "Study Builder",
+    "Experiment Workspace",
+    "Dataset Provenance",
+    "Dataset Analysis",
+    "Analysis Provenance",
+    "Evidence Registration",
+    "Evidence Claim Graph",
+    "Claim Governance",
+    "Scientific Decision",
+    "Decision Ledger",
+    "Audit Snapshot",
+    "Model Revision Lineage",
+    "Successor Research Cycle",
+    "Protocol Lineage",
+    "Pre-registration Lock"
+  ],
+  "critical_boundaries": {
+    "validated_status_auto_issued": false,
+    "clinical_inference_auto_issued": false,
+    "causal_inference_auto_issued": false,
+    "synthetic_results_as_validation": false,
+    "old_trials_reused_as_new_trials": false,
+    "locked_protocol_overwritten": false,
+    "prior_records_overwritten": false
+  }
+}
