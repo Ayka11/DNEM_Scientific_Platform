@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ArchitectureLevel } from "../types.js";
+import { useLanguage } from "../i18n.js";
 import {
   Layers,
   Search,
@@ -17,6 +18,7 @@ import {
 } from "lucide-react";
 
 export const NineLevelArchitectureTab: React.FC = () => {
+  const { isAz } = useLanguage();
   const [levels, setLevels] = useState<ArchitectureLevel[]>([]);
   const [selectedLevelId, setSelectedLevelId] = useState<string>("L2");
   const [search, setSearch] = useState("");
@@ -66,17 +68,17 @@ export const NineLevelArchitectureTab: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
               <Layers className="h-5 w-5 text-blue-600" />
-              9-Level Scientific Architecture (L0 &rarr; L8)
+              {isAz ? "9 Səviyyəli Elmi Arxitektura (L0 → L8)" : "9-Level Scientific Architecture (L0 → L8)"}
             </h2>
             <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
-              Hierarchical neurocognitive ontology spanning physical sensors and external stimuli (L0), biological substrates (L1),
-              core cognition (L2), dynamic regulatory adaptation (L3), agency and value hierarchies (L4), narrative identity (L5),
-              social ecology (L6), ontogenetic development (L7), to meta-governance and model revision (L8).
+              {isAz
+                ? "Fiziki sensorlar və xarici stimullardan (L0), bioloji substratlardan (L1), əsas koqnisiyadan (L2), dinamik tənzimləmə adaptasiyasından (L3), agentlik və dəyər iyerarxiyalarından (L4), narrativ şəxsiyyətdən (L5), sosial ekologiyadan (L6), ontogenetik inkişafdan (L7) meta-idarəetmə və model reviziyasına (L8) qədər iyerarxik neyrokoqnitiv ontologiya."
+                : "Hierarchical neurocognitive ontology spanning physical sensors and external stimuli (L0), biological substrates (L1), core cognition (L2), dynamic regulatory adaptation (L3), agency and value hierarchies (L4), narrative identity (L5), social ecology (L6), ontogenetic development (L7), to meta-governance and model revision (L8)."}
             </p>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-mono rounded-md font-semibold border border-slate-200">
-              DNEM v7.7 Ontology
+              DNEM v7.7 {isAz ? "Ontologiyası" : "Ontology"}
             </span>
           </div>
         </div>
@@ -89,7 +91,11 @@ export const NineLevelArchitectureTab: React.FC = () => {
             id="architecture-search-input"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search constructs, domains (e.g. C01, R02, H04), paradigms, or level names..."
+            placeholder={
+              isAz
+                ? "Konstruktları, domenləri (məs. C01, R02, H04), paradiqmaları və ya səviyyə adlarını axtarın..."
+                : "Search constructs, domains (e.g. C01, R02, H04), paradigms, or level names..."
+            }
             className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
           />
         </div>
@@ -100,7 +106,9 @@ export const NineLevelArchitectureTab: React.FC = () => {
         {/* Left: 9-Level Stack List */}
         <div className="lg:col-span-5 space-y-2.5">
           <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-1">
-            Ontological Hierarchy (Top: Meta &bull; Bottom: Physics)
+            {isAz
+              ? "Ontoloji İyerarxiya (Yuxarı: Meta • Aşağı: Fizika)"
+              : "Ontological Hierarchy (Top: Meta • Bottom: Physics)"}
           </div>
 
           <div className="space-y-2">
@@ -138,7 +146,7 @@ export const NineLevelArchitectureTab: React.FC = () => {
 
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <span className="text-[10px] px-2 py-0.5 rounded-md font-mono font-semibold bg-slate-100 text-slate-600 border border-slate-200">
-                      {lvl.domains.length} domains
+                      {lvl.domains.length} {isAz ? "domen" : "domains"}
                     </span>
                     <ChevronRight
                       className={`h-4 w-4 transition-transform ${
@@ -175,7 +183,7 @@ export const NineLevelArchitectureTab: React.FC = () => {
                         : "bg-slate-100 text-slate-700 border-slate-200"
                     }`}
                   >
-                    STATUS: {activeLevel.status}
+                    STATUS: {isAz && activeLevel.status === "ACTIVE" ? "AKTİV" : isAz && activeLevel.status === "SPECIFIED" ? "SPESİFİKASİYA EDİLİB" : activeLevel.status}
                   </span>
                 </div>
                 <p className="text-xs text-blue-600 font-semibold mt-1">{activeLevel.category}</p>
@@ -185,14 +193,16 @@ export const NineLevelArchitectureTab: React.FC = () => {
               {/* Theoretical Grounding Card */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-1">
                 <span className="font-semibold text-slate-800 uppercase tracking-wider text-[10px]">
-                  Theoretical & Empirical Grounding
+                  {isAz ? "Nəzəri və Empirik Əsaslandırma" : "Theoretical & Empirical Grounding"}
                 </span>
                 <p className="text-slate-600 leading-relaxed">{activeLevel.theoreticalGrounding}</p>
               </div>
 
               {/* Core Constructs */}
               <div className="space-y-2">
-                <span className="text-xs font-semibold text-slate-800">Core Constructs</span>
+                <span className="text-xs font-semibold text-slate-800">
+                  {isAz ? "Əsas Konstruktlar" : "Core Constructs"}
+                </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {activeLevel.coreConstructs.map((construct, i) => (
                     <div
@@ -210,7 +220,9 @@ export const NineLevelArchitectureTab: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold text-slate-800">
-                    Associated Assessment Domains ({activeLevel.domains.length})
+                    {isAz
+                      ? `Əlaqəli Qiymətləndirmə Domenləri (${activeLevel.domains.length})`
+                      : `Associated Assessment Domains (${activeLevel.domains.length})`}
                   </span>
                 </div>
                 <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
@@ -231,7 +243,9 @@ export const NineLevelArchitectureTab: React.FC = () => {
 
               {/* Sample Task Paradigms */}
               <div className="space-y-2">
-                <span className="text-xs font-semibold text-slate-800">Sample Task Paradigms</span>
+                <span className="text-xs font-semibold text-slate-800">
+                  {isAz ? "Nümunəvi Tapşırıq Paradiqmaları" : "Sample Task Paradigms"}
+                </span>
                 <div className="flex flex-wrap gap-1.5">
                   {activeLevel.paradigms.map((p, idx) => (
                     <span
@@ -247,11 +261,15 @@ export const NineLevelArchitectureTab: React.FC = () => {
               {/* Data Contracts: Input & Output */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-100 text-xs">
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
-                  <div className="font-semibold text-slate-700 text-[10px] uppercase font-mono">Input Contract</div>
+                  <div className="font-semibold text-slate-700 text-[10px] uppercase font-mono">
+                    {isAz ? "Daxiletmə Müqaviləsi" : "Input Contract"}
+                  </div>
                   <div className="text-slate-600 text-[11px] leading-relaxed">{activeLevel.inputContract}</div>
                 </div>
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
-                  <div className="font-semibold text-slate-700 text-[10px] uppercase font-mono">Output Contract</div>
+                  <div className="font-semibold text-slate-700 text-[10px] uppercase font-mono">
+                    {isAz ? "Çıxış Müqaviləsi" : "Output Contract"}
+                  </div>
                   <div className="text-slate-600 text-[11px] leading-relaxed">{activeLevel.outputContract}</div>
                 </div>
               </div>

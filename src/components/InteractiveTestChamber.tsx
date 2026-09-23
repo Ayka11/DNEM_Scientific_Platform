@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useLanguage } from "../i18n.js";
 import {
   Play,
   RotateCcw,
@@ -17,6 +18,7 @@ import {
   Download,
   FileSpreadsheet,
   FileJson,
+  Globe,
 } from "lucide-react";
 
 export interface HumanTrialResult {
@@ -43,7 +45,7 @@ interface ParadigmDef {
   defaultTrials: number;
 }
 
-const PARADIGMS: Record<TestParadigmId, ParadigmDef> = {
+const PARADIGMS_EN: Record<TestParadigmId, ParadigmDef> = {
   "C05-01": {
     id: "C05-01",
     name: "Stroop Color-Word Interference",
@@ -101,6 +103,67 @@ const PARADIGMS: Record<TestParadigmId, ParadigmDef> = {
   },
 };
 
+const PARADIGMS_AZ: Record<TestParadigmId, ParadigmDef> = {
+  "C05-01": {
+    id: "C05-01",
+    name: "Stroop Rəng-Söz Müdaxiləsi",
+    domain: "İnhibitor Nəzarət və İcraedici Funksiya (C05)",
+    tier: "Tier I",
+    shortDesc: "Yazılmış sözü deyil, şriftin rəngini adlandıraraq semantik konfliktin qarşısının alınmasını ölçün.",
+    instructions:
+      "Rəngli mətndə bir söz görünəcək. Məqsədiniz sözün mənasına fikir vermədən ŞRİFTİN RƏNGİNİ mümkün qədər tez müəyyənləşdirməkdir. Müvafiq klaviatura düyməsinə basın və ya aşağıdakı düyməyə klikləyin.",
+    keysHint: "[Q/R] Qırmızı • [Y/G] Yaşıl • [M/B] Mavi • [S/Y] Sarı",
+    defaultTrials: 12,
+  },
+  "C02-01": {
+    id: "C02-01",
+    name: "2-Geri İşçi Yaddaş Yenilənməsi",
+    domain: "İşçi Yaddaş Tutumu (C02)",
+    tier: "Tier I",
+    shortDesc: "Cari elementin 2 addım əvvəlki elementlə uyğun gəlib-gəlmədiyini göstərərək dinamik yaddaş buferlərini izləyin.",
+    instructions:
+      "Hərflər bir-bir ekranda görünəcək. CARİ hərfin DƏQİQ İKİ SINAQ ƏVVƏL təqdim olunmuş hərflə eyni olub-olmadığını müəyyən edin. Uyğundursa UYĞUNDUR, deyilsə UYĞUN DEYİL düyməsinə basın.",
+    keysHint: "[M] Uyğundur • [N] Uyğun Deyil",
+    defaultTrials: 14,
+  },
+  "C03-01": {
+    id: "C03-01",
+    name: "Seçim Reaksiyası Vaxtı və Emal Sürəti",
+    domain: "Emal Sürəti (C03)",
+    tier: "Tier I",
+    shortDesc: "Dəyişkən fiksasiya intervalı ilə sub-millisaniyəlik vizual sensor-motor gecikməsi.",
+    instructions:
+      "Mərkəzi nişangaha fokuslanın. Hədəf oxu SOLDA və ya SAĞDA görünən kimi dərhal həmin istiqamətə reaksiya verin. Həm sürət, həm də dəqiqlik vacibdir!",
+    keysHint: "[←] və ya [A] Sol • [→] və ya [D] Sağ",
+    defaultTrials: 10,
+  },
+  "C04-01": {
+    id: "C04-01",
+    name: "Eriksen Flanker Tapşırığı (Selektiv Diqqət)",
+    domain: "Selektiv Diqqət və Müdaxilə (C04)",
+    tier: "Tier I",
+    shortDesc: "Yalnız mərkəzi hədəf oxuna diqqət yetirərək məkan yayındırıcılarının yatırılmasını ölçün.",
+    instructions:
+      "5 oxdan ibarət sıra görəcəksiniz. Ətrafdakı kənar oxlara fikir vermədən yalnız ORTA oxun istiqamətini müəyyən edin. Bəzi sınaqlar uyğun (eyni istiqamət), bəziləri isə uyğunsuzdur.",
+    keysHint: "[←] və ya [A] Sol • [→] və ya [D] Sağ",
+    defaultTrials: 12,
+  },
+  "C01-01": {
+    id: "C01-01",
+    name: "Matris Məntiqi / Naxışın Tamamlanması",
+    domain: "Çevik Mühakimə (C01)",
+    tier: "Tier I",
+    shortDesc: "Mücərrəd məntiqi problem həlli: çatışmayan həndəsi elementi müəyyən edin.",
+    instructions:
+      "İdarəedici qanunauyğunluğu (fırlanma, forma ardıcıllığı, say artımı) aşkar etmək üçün 2x2 və ya 3x3 matrisi araşdırın. Çatışmayan yeri məntiqi olaraq tamamlayan variantı seçin.",
+    keysHint: "[1], [2], [3] və ya [4] variantına klikləyin",
+    defaultTrials: 6,
+  },
+};
+
+const PARADIGMS = PARADIGMS_EN;
+
+
 type TestPhase = "SELECT" | "INSTRUCTIONS" | "COUNTDOWN" | "FIXATION" | "STIMULUS" | "FEEDBACK" | "RESULTS";
 
 interface StroopStimulus {
@@ -130,6 +193,10 @@ interface MatrixItem {
 export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId }> = ({
   initialParadigm = "C05-01",
 }) => {
+  const { language, setLanguage } = useLanguage();
+  const isAz = language === "az";
+  const PARADIGMS = isAz ? PARADIGMS_AZ : PARADIGMS_EN;
+
   const [selectedParadigm, setSelectedParadigm] = useState<TestParadigmId>(initialParadigm);
   const [totalTrials, setTotalTrials] = useState<number>(PARADIGMS[initialParadigm]?.defaultTrials || 10);
   const [phase, setPhase] = useState<TestPhase>("SELECT");
@@ -235,7 +302,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
     return { side: Math.random() < 0.5 ? "LEFT" : "RIGHT" };
   };
 
-  const MATRIX_ITEMS: MatrixItem[] = [
+  const MATRIX_ITEMS_EN: MatrixItem[] = [
     {
       matrixQuestion: [
         ["▲", "▲▲"],
@@ -296,6 +363,70 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
       ruleExplanation: "Multiplication by 2 rule across columns (5 * 2 = 10, 10 * 2 = 20).",
     },
   ];
+
+  const MATRIX_ITEMS_AZ: MatrixItem[] = [
+    {
+      matrixQuestion: [
+        ["▲", "▲▲"],
+        ["■", "■■"],
+      ],
+      options: ["●", "■■■", "▲▲", "■"],
+      correctIndex: 1,
+      ruleExplanation: "Sətir üzrə ikiqat artım: hər növbəti sütun fiqurların sayını iki dəfə artırır.",
+    },
+    {
+      matrixQuestion: [
+        ["○", "◐", "●"],
+        ["△", "▲", "▲"],
+        ["□", "◪", "?"],
+      ],
+      options: ["■", "□", "◩", "◇"],
+      correctIndex: 0,
+      ruleExplanation: "Doluluq proqressiyası: boş fiqurdan tam dolu fiqura doğru inkişaf edir.",
+    },
+    {
+      matrixQuestion: [
+        ["↑", "→", "↓"],
+        ["←", "↑", "→"],
+        ["↓", "←", "?"],
+      ],
+      options: ["↑", "→", "↓", "↙"],
+      correctIndex: 0,
+      ruleExplanation: "Saat əqrəbi istiqamətində 90 dərəcəlik fırlanma: ↑ → → ↓.",
+    },
+    {
+      matrixQuestion: [
+        ["●", "●●", "●●●"],
+        ["◆", "◆◆", "◆◆◆"],
+        ["★", "★★", "?"],
+      ],
+      options: ["★★★", "★", "★★★★", "●●●"],
+      correctIndex: 0,
+      ruleExplanation: "Xətti say artımı: hər sətirdə simvolların sayı 1 vahid artır.",
+    },
+    {
+      matrixQuestion: [
+        ["＋", "×", "＋"],
+        ["×", "＋", "×"],
+        ["＋", "×", "?"],
+      ],
+      options: ["＋", "×", "○", "－"],
+      correctIndex: 0,
+      ruleExplanation: "Növbələşən şahmat simmetriyası qaydası.",
+    },
+    {
+      matrixQuestion: [
+        ["1", "2", "4"],
+        ["3", "6", "12"],
+        ["5", "10", "?"],
+      ],
+      options: ["15", "20", "25", "12"],
+      correctIndex: 1,
+      ruleExplanation: "Sütunlar üzrə 2-yə vurma qaydası (5 * 2 = 10, 10 * 2 = 20).",
+    },
+  ];
+
+  const MATRIX_ITEMS = isAz ? MATRIX_ITEMS_AZ : MATRIX_ITEMS_EN;
 
   // Starting test session
   const handleStartTest = () => {
@@ -424,10 +555,10 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
       const key = e.key.toUpperCase();
 
       if (selectedParadigm === "C05-01") {
-        if (key === "R") handleResponse("RED");
-        else if (key === "G") handleResponse("GREEN");
-        else if (key === "B") handleResponse("BLUE");
-        else if (key === "Y") handleResponse("YELLOW");
+        if (key === "R" || key === "Q") handleResponse("RED");
+        else if (key === "G" || (isAz ? key === "Y" : false)) handleResponse("GREEN");
+        else if (key === "B" || key === "M") handleResponse("BLUE");
+        else if ((!isAz && key === "Y") || key === "S") handleResponse("YELLOW");
       } else if (selectedParadigm === "C02-01") {
         if (key === "M") handleResponse("MATCH");
         else if (key === "N") handleResponse("NO_MATCH");
@@ -572,17 +703,37 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
             </span>
             <span className="text-sm font-bold text-white">{PARADIGMS[selectedParadigm].name}</span>
             <span className="text-xs text-slate-400 font-mono">
-              (Trial {currentTrialIdx + 1} of {totalTrials})
+              ({isAz ? "Sınaq" : "Trial"} {currentTrialIdx + 1} {isAz ? "/" : "of"} {totalTrials})
             </span>
           </div>
           <div className="flex items-center gap-2">
+            <div className="flex items-center bg-slate-900 border border-slate-800 rounded-lg p-0.5 text-xs font-mono">
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={`px-2 py-1 rounded text-[11px] font-bold transition-colors ${
+                  !isAz ? "bg-slate-800 text-blue-400" : "text-slate-400 hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("az")}
+                className={`px-2 py-1 rounded text-[11px] font-bold transition-colors ${
+                  isAz ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-white"
+                }`}
+              >
+                AZ
+              </button>
+            </div>
             <button
               onClick={() => setIsFullscreen(false)}
               className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-mono font-semibold flex items-center gap-1.5 transition-colors"
               title="Exit fullscreen mode (or press Escape)"
             >
               <Minimize2 className="h-3.5 w-3.5" />
-              Exit Fullscreen (Esc)
+              {isAz ? "Tam Ekrandan Çıx (Esc)" : "Exit Fullscreen (Esc)"}
             </button>
             <button
               onClick={() => {
@@ -592,7 +743,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
               className="px-3 py-1.5 bg-rose-950/80 hover:bg-rose-900 border border-rose-800 text-rose-200 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
             >
               <RotateCcw className="h-3.5 w-3.5" />
-              Exit Test
+              {isAz ? "Testdən Çıx" : "Exit Test"}
             </button>
           </div>
         </div>
@@ -602,39 +753,71 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
           <div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-2">
               <Zap className="h-3.5 w-3.5 text-emerald-600" />
-              Live Human Participant Testing Chamber
+              {isAz ? "Canlı İnsan İştirakçı Test Kamerası" : "Live Human Participant Testing Chamber"}
             </div>
             <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-              Interactive Cognitive Battery Execution
+              {isAz ? "İnteraktiv Koqnitiv Batareya İcrası" : "Interactive Cognitive Battery Execution"}
             </h2>
             <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
-              Take real empirical cognitive tests with sub-millisecond reaction time capture, strict event timing contracts,
-              and immediate cryptographic SHA-256 provenance locking.
+              {isAz
+                ? "Milli-saniyə dəqiqliyində reaksiya vaxtı qeydiyyatı, sərt hadisə vaxtlama müqavilələri və ani kriptoqrafik SHA-256 mənşə kilidi ilə real empirik koqnitiv testləri keçin."
+                : "Take real empirical cognitive tests with sub-millisecond reaction time capture, strict event timing contracts, and immediate cryptographic SHA-256 provenance locking."}
             </p>
           </div>
 
-          {phase !== "SELECT" && phase !== "RESULTS" && (
-            <div className="flex items-center gap-2 self-start md:self-auto">
+          <div className="flex flex-wrap items-center gap-2 self-start md:self-auto">
+            {/* In-Chamber Language Switcher */}
+            <div
+              className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs shadow-2xs"
+              title={isAz ? "Test üçün dili seçin" : "Select language for cognitive tests"}
+            >
+              <Globe className="h-3.5 w-3.5 text-slate-500 ml-1" />
+              <span className="text-[11px] font-medium text-slate-600 pl-0.5 pr-1">
+                {isAz ? "Test Dili:" : "Test Lang:"}
+              </span>
               <button
-                onClick={() => setIsFullscreen(true)}
-                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
-                title="Distraction-Free Fullscreen Mode"
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={`px-2 py-1 rounded-md text-[11px] font-bold font-mono transition-all ${
+                  !isAz ? "bg-white text-blue-700 shadow-2xs" : "text-slate-500 hover:text-slate-800"
+                }`}
               >
-                <Maximize2 className="h-3.5 w-3.5" />
-                Fullscreen
+                EN
               </button>
               <button
-                onClick={() => {
-                  setIsFullscreen(false);
-                  setPhase("SELECT");
-                }}
-                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                type="button"
+                onClick={() => setLanguage("az")}
+                className={`px-2 py-1 rounded-md text-[11px] font-bold font-mono transition-all ${
+                  isAz ? "bg-white text-emerald-700 shadow-2xs" : "text-slate-500 hover:text-slate-800"
+                }`}
               >
-                <RotateCcw className="h-3.5 w-3.5" />
-                Exit Test
+                AZ
               </button>
             </div>
-          )}
+
+            {phase !== "SELECT" && phase !== "RESULTS" && (
+              <>
+                <button
+                  onClick={() => setIsFullscreen(true)}
+                  className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                  title="Distraction-Free Fullscreen Mode"
+                >
+                  <Maximize2 className="h-3.5 w-3.5" />
+                  {isAz ? "Tam Ekran" : "Fullscreen"}
+                </button>
+                <button
+                  onClick={() => {
+                    setIsFullscreen(false);
+                    setPhase("SELECT");
+                  }}
+                  className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  {isAz ? "Testdən Çıx" : "Exit Test"}
+                </button>
+              </>
+            )}
+          </div>
         </div>
       )}
 
@@ -670,9 +853,11 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between text-xs text-slate-500">
-                    <span>Default: {p.defaultTrials} trials</span>
+                    <span>
+                      {isAz ? "Standart:" : "Default:"} {p.defaultTrials} {isAz ? "sınaq" : "trials"}
+                    </span>
                     <span className="text-blue-600 font-semibold flex items-center gap-1">
-                      Select <ChevronRight className="h-3.5 w-3.5" />
+                      {isAz ? "Seç" : "Select"} <ChevronRight className="h-3.5 w-3.5" />
                     </span>
                   </div>
                 </div>
@@ -684,12 +869,14 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-4">
             <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
               <Brain className="h-4 w-4 text-blue-600" />
-              Configure Test Session: {PARADIGMS[selectedParadigm].name}
+              {isAz ? "Test Sessiyasını Tənzimləyin:" : "Configure Test Session:"} {PARADIGMS[selectedParadigm].name}
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="space-y-1">
-                <label className="font-semibold text-slate-700 block">Number of Experimental Trials</label>
+                <label className="font-semibold text-slate-700 block">
+                  {isAz ? "Eksperimental Sınaqların Sayı" : "Number of Experimental Trials"}
+                </label>
                 <div className="flex gap-2">
                   {[6, 12, 20, 30].map((count) => (
                     <button
@@ -702,16 +889,18 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                           : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                       }`}
                     >
-                      {count} {count === 6 ? "(Quick Demo)" : "trials"}
+                      {count} {count === 6 ? (isAz ? "(Qısa Demo)" : "(Quick Demo)") : (isAz ? "sınaq" : "trials")}
                     </button>
                   ))}
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="font-semibold text-slate-700 block">Participant Identification</label>
+                <label className="font-semibold text-slate-700 block">
+                  {isAz ? "İştirakçının İdentifikasiyası" : "Participant Identification"}
+                </label>
                 <div className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-600 font-mono">
-                  human_participant_01 (Live Session)
+                  human_participant_01 ({isAz ? "Canlı Sessiya" : "Live Session"})
                 </div>
               </div>
             </div>
@@ -722,7 +911,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                 className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-xs shadow-xs transition-colors flex items-center justify-center gap-2"
               >
                 <Play className="h-4 w-4" />
-                Proceed to Instructions
+                {isAz ? "Təlimatlara Keç" : "Proceed to Instructions"}
               </button>
             </div>
           </div>
@@ -740,21 +929,27 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
           </div>
 
           <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
-            <p className="font-semibold text-slate-900">Task Instructions:</p>
+            <p className="font-semibold text-slate-900">{isAz ? "Tapşırıq Təlimatları:" : "Task Instructions:"}</p>
             <p className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-slate-800">
               {PARADIGMS[selectedParadigm].instructions}
             </p>
 
             <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-1 text-xs text-blue-950">
-              <strong className="block text-blue-900 font-semibold">Response Controls:</strong>
+              <strong className="block text-blue-900 font-semibold">
+                {isAz ? "Cavab İdarəetmə Düymələri:" : "Response Controls:"}
+              </strong>
               <div className="font-mono text-blue-800">{PARADIGMS[selectedParadigm].keysHint}</div>
               <p className="text-[11px] text-blue-700 mt-1">
-                You can respond using either physical keyboard hotkeys or on-screen click buttons during the trial.
+                {isAz
+                  ? "Sınaq zamanı fiziki klaviatura düymələrindən və ya ekrandakı klik düymələrindən istifadə edə bilərsiniz."
+                  : "You can respond using either physical keyboard hotkeys or on-screen click buttons during the trial."}
               </p>
             </div>
 
             <p className="text-xs text-slate-500 italic">
-              Try to respond as accurately and quickly as possible. The session consists of {totalTrials} trials.
+              {isAz
+                ? `Mümkün qədər tez və dəqiq cavab verməyə çalışın. Sessiya ${totalTrials} sınaqdan ibarətdir.`
+                : `Try to respond as accurately and quickly as possible. The session consists of ${totalTrials} trials.`}
             </p>
           </div>
 
@@ -763,7 +958,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
               onClick={() => setPhase("SELECT")}
               className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900"
             >
-              Back to Task List
+              {isAz ? "Tapşırıq Siyahısına Qayıt" : "Back to Task List"}
             </button>
             <div className="flex items-center gap-2">
               <button
@@ -773,17 +968,17 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   handleStartTest();
                 }}
                 className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg text-xs shadow-xs transition-colors flex items-center gap-2"
-                title="Insulate test from browser distractions"
+                title={isAz ? "Testi brauzer yayındırıcılarından təcrid edin" : "Insulate test from browser distractions"}
               >
                 <Maximize2 className="h-4 w-4 text-emerald-400" />
-                Start in Fullscreen Mode
+                {isAz ? "Tam Ekran Rejimində Başla" : "Start in Fullscreen Mode"}
               </button>
               <button
                 onClick={handleStartTest}
                 className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg text-xs shadow-xs transition-colors flex items-center gap-2"
               >
                 <Play className="h-4 w-4" />
-                I Am Ready — Start Test
+                {isAz ? "Hazıram — Testi Başlat" : "I Am Ready — Start Test"}
               </button>
             </div>
           </div>
@@ -793,9 +988,13 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
       {/* PHASE 3: COUNTDOWN */}
       {phase === "COUNTDOWN" && (
         <div className="min-h-[380px] bg-white rounded-2xl border border-slate-200 shadow-2xs flex flex-col items-center justify-center p-8 space-y-4">
-          <div className="text-xs font-mono uppercase tracking-widest text-slate-400">Get Ready</div>
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-400">
+            {isAz ? "Hazırlaşın" : "Get Ready"}
+          </div>
           <div className="text-7xl font-extrabold text-blue-600 font-mono animate-pulse">{countdown}</div>
-          <p className="text-xs text-slate-500 font-mono">Keep fingers on response keys</p>
+          <p className="text-xs text-slate-500 font-mono">
+            {isAz ? "Barmaqlarınızı cavab düymələrində saxlayın" : "Keep fingers on response keys"}
+          </p>
         </div>
       )}
 
@@ -804,7 +1003,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
         <div className="min-h-[380px] bg-slate-950 rounded-2xl border border-slate-900 flex flex-col items-center justify-center relative overflow-hidden select-none">
           <div className="text-5xl font-mono text-slate-400 select-none">+</div>
           <div className="absolute top-4 right-4 text-xs font-mono text-slate-500">
-            Trial {currentTrialIdx + 1} / {totalTrials}
+            {isAz ? "Sınaq" : "Trial"} {currentTrialIdx + 1} / {totalTrials}
           </div>
         </div>
       )}
@@ -816,7 +1015,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
           <div className="w-full flex items-center justify-between text-xs font-mono text-slate-400 border-b border-slate-800 pb-3">
             <span>{PARADIGMS[selectedParadigm].name}</span>
             <span>
-              Trial {currentTrialIdx + 1} of {totalTrials}
+              {isAz ? "Sınaq" : "Trial"} {currentTrialIdx + 1} {isAz ? "/" : "of"} {totalTrials}
             </span>
           </div>
 
@@ -828,7 +1027,15 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                 className="text-5xl sm:text-6xl font-extrabold tracking-wider select-none font-mono drop-shadow-md"
                 style={{ color: stroopCurrent.colorHex }}
               >
-                {stroopCurrent.word}
+                {isAz
+                  ? stroopCurrent.word === "RED"
+                    ? "QIRMIZI"
+                    : stroopCurrent.word === "GREEN"
+                    ? "YAŞIL"
+                    : stroopCurrent.word === "BLUE"
+                    ? "MAVİ"
+                    : "SARI"
+                  : stroopCurrent.word}
               </div>
             )}
 
@@ -839,7 +1046,9 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   {nBackLetterStream[currentTrialIdx]}
                 </div>
                 <div className="text-xs text-slate-400 font-mono">
-                  Does this match the letter from 2 steps back?
+                  {isAz
+                    ? "Bu hərf 2 addım əvvəlki hərflə eynidirmi?"
+                    : "Does this match the letter from 2 steps back?"}
                 </div>
               </div>
             )}
@@ -872,7 +1081,9 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   {flankerCurrent.display}
                 </div>
                 <div className="text-xs text-slate-400 font-mono">
-                  Focus on the MIDDLE arrow direction only
+                  {isAz
+                    ? "Yalnız ORTA oxun istiqamətinə fokuslanın"
+                    : "Focus on the MIDDLE arrow direction only"}
                 </div>
               </div>
             )}
@@ -896,7 +1107,11 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                     ))
                   )}
                 </div>
-                <div className="text-xs text-slate-400 font-mono">Select the tile that completes the pattern:</div>
+                <div className="text-xs text-slate-400 font-mono">
+                  {isAz
+                    ? "Naxışı tamamlayan xananı seçin:"
+                    : "Select the tile that completes the pattern:"}
+                </div>
               </div>
             )}
           </div>
@@ -910,29 +1125,37 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   onClick={() => handleResponse("RED")}
                   className="py-3 px-4 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                 >
-                  <span className="font-mono bg-red-800 px-1.5 py-0.5 rounded text-[10px]">R</span>
-                  RED
+                  <span className="font-mono bg-red-800 px-1.5 py-0.5 rounded text-[10px]">
+                    {isAz ? "Q / R" : "R"}
+                  </span>
+                  {isAz ? "QIRMIZI" : "RED"}
                 </button>
                 <button
                   onClick={() => handleResponse("GREEN")}
                   className="py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                 >
-                  <span className="font-mono bg-emerald-800 px-1.5 py-0.5 rounded text-[10px]">G</span>
-                  GREEN
+                  <span className="font-mono bg-emerald-800 px-1.5 py-0.5 rounded text-[10px]">
+                    {isAz ? "Y / G" : "G"}
+                  </span>
+                  {isAz ? "YAŞIL" : "GREEN"}
                 </button>
                 <button
                   onClick={() => handleResponse("BLUE")}
                   className="py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                 >
-                  <span className="font-mono bg-blue-800 px-1.5 py-0.5 rounded text-[10px]">B</span>
-                  BLUE
+                  <span className="font-mono bg-blue-800 px-1.5 py-0.5 rounded text-[10px]">
+                    {isAz ? "M / B" : "B"}
+                  </span>
+                  {isAz ? "MAVİ" : "BLUE"}
                 </button>
                 <button
                   onClick={() => handleResponse("YELLOW")}
                   className="py-3 px-4 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                 >
-                  <span className="font-mono bg-yellow-700 text-white px-1.5 py-0.5 rounded text-[10px]">Y</span>
-                  YELLOW
+                  <span className="font-mono bg-yellow-700 text-white px-1.5 py-0.5 rounded text-[10px]">
+                    {isAz ? "S / Y" : "Y"}
+                  </span>
+                  {isAz ? "SARI" : "YELLOW"}
                 </button>
               </div>
             )}
@@ -945,14 +1168,14 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   className="py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
                 >
                   <span className="font-mono bg-emerald-800 px-1.5 py-0.5 rounded text-[10px]">M</span>
-                  MATCH (2-Back)
+                  {isAz ? "UYĞUNDUR (2-Geri)" : "MATCH (2-Back)"}
                 </button>
                 <button
                   onClick={() => handleResponse("NO_MATCH")}
                   className="py-3 px-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
                 >
                   <span className="font-mono bg-slate-900 px-1.5 py-0.5 rounded text-[10px]">N</span>
-                  NO MATCH
+                  {isAz ? "UYĞUN DEYİL" : "NO MATCH"}
                 </button>
               </div>
             )}
@@ -965,14 +1188,14 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   className="py-3.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
                 >
                   <span className="font-mono bg-blue-800 px-1.5 py-0.5 rounded text-[10px]">◀ / A</span>
-                  LEFT
+                  {isAz ? "SOL" : "LEFT"}
                 </button>
                 <button
                   onClick={() => handleResponse("RIGHT")}
                   className="py-3.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
                 >
                   <span className="font-mono bg-blue-800 px-1.5 py-0.5 rounded text-[10px]">▶ / D</span>
-                  RIGHT
+                  {isAz ? "SAĞ" : "RIGHT"}
                 </button>
               </div>
             )}
@@ -986,7 +1209,9 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                     onClick={() => handleResponse(String(idx))}
                     className="py-3 px-2 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-sm flex flex-col items-center justify-center gap-1 border border-slate-700 hover:border-blue-400 transition-colors"
                   >
-                    <span className="text-[10px] text-slate-400 font-mono">Option {idx + 1}</span>
+                    <span className="text-[10px] text-slate-400 font-mono">
+                      {isAz ? `${idx + 1}-ci Variant` : `Option ${idx + 1}`}
+                    </span>
                     <span className="text-lg">{opt}</span>
                   </button>
                 ))}
@@ -1001,11 +1226,11 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
         <div className="min-h-[380px] bg-slate-950 rounded-2xl border border-slate-900 flex flex-col items-center justify-center p-8 space-y-2">
           {lastFeedback?.correct ? (
             <div className="text-emerald-400 text-2xl font-bold font-mono flex items-center gap-2">
-              <CheckCircle2 className="h-7 w-7" /> Correct ({lastFeedback.rt} ms)
+              <CheckCircle2 className="h-7 w-7" /> {isAz ? "Düzgün" : "Correct"} ({lastFeedback.rt} ms)
             </div>
           ) : (
             <div className="text-rose-400 text-2xl font-bold font-mono flex items-center gap-2">
-              <AlertCircle className="h-7 w-7" /> Incorrect ({lastFeedback?.rt} ms)
+              <AlertCircle className="h-7 w-7" /> {isAz ? "Səhv" : "Incorrect"} ({lastFeedback?.rt} ms)
             </div>
           )}
         </div>
@@ -1018,13 +1243,15 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
             <div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-semibold mb-2">
                 <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
-                Session Complete &bull; Empirical Human Data Captured
+                {isAz ? "Sessiya Tamamlandı • Empirik İnsan Məlumatı Qeydə Alındı" : "Session Complete • Empirical Human Data Captured"}
               </div>
               <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                {PARADIGMS[selectedParadigm].name} — Psychometric Summary
+                {PARADIGMS[selectedParadigm].name} — {isAz ? "Psixometrik İcmal" : "Psychometric Summary"}
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                Completed {totalTrials} operational trials under deterministic event bus observation.
+                {isAz
+                  ? `Deterministik hadisə şini müşahidəsi altında ${totalTrials} əməliyyat sınağı tamamlandı.`
+                  : `Completed ${totalTrials} operational trials under deterministic event bus observation.`}
               </p>
             </div>
 
@@ -1032,31 +1259,31 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
               <button
                 onClick={handleExportCSV}
                 className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-slate-200 transition-colors"
-                title="Download CSV of all recorded trials"
+                title={isAz ? "Bütün qeydə alınmış sınaqların CSV faylını yükləyin" : "Download CSV of all recorded trials"}
               >
                 <FileSpreadsheet className="h-3.5 w-3.5 text-emerald-600" />
-                Export CSV
+                {isAz ? "CSV İxrac" : "Export CSV"}
               </button>
               <button
                 onClick={handleExportJSON}
                 className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-slate-200 transition-colors"
-                title="Download BIDS-compatible JSON file"
+                title={isAz ? "BIDS uyğun JSON faylını yükləyin" : "Download BIDS-compatible JSON file"}
               >
                 <FileJson className="h-3.5 w-3.5 text-blue-600" />
-                Export JSON
+                {isAz ? "JSON İxrac" : "Export JSON"}
               </button>
               <button
                 onClick={handleStartTest}
                 className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
-                Retake Test
+                {isAz ? "Yenidən Keç" : "Retake Test"}
               </button>
               <button
                 onClick={() => setPhase("SELECT")}
                 className="px-3.5 py-1.5 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-lg text-xs font-semibold transition-colors"
               >
-                Choose Another Test
+                {isAz ? "Başqa Test Seç" : "Choose Another Test"}
               </button>
             </div>
           </div>
@@ -1064,58 +1291,84 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
           {/* Primary Summary Metrics */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <div className="text-[11px] font-bold text-slate-500 uppercase">Accuracy Rate</div>
+              <div className="text-[11px] font-bold text-slate-500 uppercase">
+                {isAz ? "Dəqiqlik Faizi" : "Accuracy Rate"}
+              </div>
               <div className="text-2xl font-extrabold font-mono text-emerald-600">{accuracyPct}%</div>
               <div className="text-[10px] text-slate-500 font-mono">
-                {correctCount} of {total} correct
+                {correctCount} / {total} {isAz ? "düzgün" : "correct"}
               </div>
             </div>
 
             <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <div className="text-[11px] font-bold text-slate-500 uppercase">Mean Reaction Time</div>
+              <div className="text-[11px] font-bold text-slate-500 uppercase">
+                {isAz ? "Orta Reaksiya Vaxtı" : "Mean Reaction Time"}
+              </div>
               <div className="text-2xl font-extrabold font-mono text-slate-900">{meanRt} ms</div>
-              <div className="text-[10px] text-slate-500 font-mono">Median: {medianRt} ms (Min: {minRt}ms)</div>
+              <div className="text-[10px] text-slate-500 font-mono">
+                {isAz ? "Median:" : "Median:"} {medianRt} ms ({isAz ? "Min:" : "Min:"} {minRt}ms)
+              </div>
             </div>
 
             {/* Paradigm-specific card */}
             {selectedParadigm === "C05-01" ? (
               <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-1">
-                <div className="text-[11px] font-bold text-blue-800 uppercase">Stroop Interference</div>
+                <div className="text-[11px] font-bold text-blue-800 uppercase">
+                  {isAz ? "Stroop Müdaxiləsi" : "Stroop Interference"}
+                </div>
                 <div className="text-2xl font-extrabold font-mono text-blue-900">
                   {interferenceEffect > 0 ? `+${interferenceEffect}` : interferenceEffect} ms
                 </div>
                 <div className="text-[10px] text-blue-700 font-mono">
-                  Incongruent ({meanIncongruentRt}ms) - Congruent ({meanCongruentRt}ms)
+                  {isAz ? "Uyğunsuz" : "Incongruent"} ({meanIncongruentRt}ms) - {isAz ? "Uyğun" : "Congruent"} ({meanCongruentRt}ms)
                 </div>
               </div>
             ) : selectedParadigm === "C04-01" ? (
               <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-1">
-                <div className="text-[11px] font-bold text-blue-800 uppercase">Flanker Conflict Cost</div>
+                <div className="text-[11px] font-bold text-blue-800 uppercase">
+                  {isAz ? "Flanker Münaqişə Dəyəri" : "Flanker Conflict Cost"}
+                </div>
                 <div className="text-2xl font-extrabold font-mono text-blue-900">
                   {interferenceEffect > 0 ? `+${interferenceEffect}` : interferenceEffect} ms
                 </div>
-                <div className="text-[10px] text-blue-700 font-mono">Spatial flanker delay</div>
+                <div className="text-[10px] text-blue-700 font-mono">
+                  {isAz ? "Məkan yayındırıcı gecikməsi" : "Spatial flanker delay"}
+                </div>
               </div>
             ) : selectedParadigm === "C02-01" ? (
               <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-1">
-                <div className="text-[11px] font-bold text-blue-800 uppercase">Working Memory Score</div>
-                <div className="text-2xl font-extrabold font-mono text-blue-900">
-                  {accuracyPct >= 80 ? "HIGH" : accuracyPct >= 60 ? "NORMAL" : "SUB-OPTIMAL"}
+                <div className="text-[11px] font-bold text-blue-800 uppercase">
+                  {isAz ? "İşçi Yaddaş Skoru" : "Working Memory Score"}
                 </div>
-                <div className="text-[10px] text-blue-700 font-mono">2-Back Buffer Stability</div>
+                <div className="text-2xl font-extrabold font-mono text-blue-900">
+                  {accuracyPct >= 80 ? (isAz ? "YÜKSƏK" : "HIGH") : accuracyPct >= 60 ? (isAz ? "NORMAL" : "NORMAL") : (isAz ? "SUB-OPTİMAL" : "SUB-OPTIMAL")}
+                </div>
+                <div className="text-[10px] text-blue-700 font-mono">
+                  {isAz ? "2-Geri Bufer Sabitliyi" : "2-Back Buffer Stability"}
+                </div>
               </div>
             ) : (
               <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-1">
-                <div className="text-[11px] font-bold text-blue-800 uppercase">Construct Maturity</div>
-                <div className="text-2xl font-extrabold font-mono text-blue-900">VERIFIED</div>
-                <div className="text-[10px] text-blue-700 font-mono">Data Contract Adherence</div>
+                <div className="text-[11px] font-bold text-blue-800 uppercase">
+                  {isAz ? "Konstrukt Yetkinliyi" : "Construct Maturity"}
+                </div>
+                <div className="text-2xl font-extrabold font-mono text-blue-900">
+                  {isAz ? "TƏSDİQLƏNDİ" : "VERIFIED"}
+                </div>
+                <div className="text-[10px] text-blue-700 font-mono">
+                  {isAz ? "Məlumat Müqaviləsinə Uyğunluq" : "Data Contract Adherence"}
+                </div>
               </div>
             )}
 
             <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <div className="text-[11px] font-bold text-slate-500 uppercase">Omission / Timeout</div>
+              <div className="text-[11px] font-bold text-slate-500 uppercase">
+                {isAz ? "Buraxma / Vaxt Aşımı" : "Omission / Timeout"}
+              </div>
               <div className="text-2xl font-extrabold font-mono text-slate-900">0.0%</div>
-              <div className="text-[10px] text-slate-500 font-mono">100% trials valid</div>
+              <div className="text-[10px] text-slate-500 font-mono">
+                {isAz ? "100% etibarlı sınaqlar" : "100% trials valid"}
+              </div>
             </div>
           </div>
 
@@ -1125,26 +1378,26 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
               <div className="flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-blue-600" />
                 <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                  Reaction Time Latency Distribution & Trial Scatter
+                  {isAz ? "Reaksiya Vaxtı Paylanması və Sınaq Qrafiki" : "Reaction Time Latency Distribution & Trial Scatter"}
                 </h4>
               </div>
               <div className="flex items-center gap-3 text-xs font-mono text-slate-600">
-                <span>Min: <strong className="text-slate-900">{minRt} ms</strong></span>
-                <span>Median: <strong className="text-slate-900">{medianRt} ms</strong></span>
-                <span>Max: <strong className="text-slate-900">{maxRt} ms</strong></span>
+                <span>{isAz ? "Min:" : "Min:"} <strong className="text-slate-900">{minRt} ms</strong></span>
+                <span>{isAz ? "Median:" : "Median:"} <strong className="text-slate-900">{medianRt} ms</strong></span>
+                <span>{isAz ? "Maks:" : "Max:"} <strong className="text-slate-900">{maxRt} ms</strong></span>
               </div>
             </div>
 
             {/* Trial RT Bar Chart */}
             <div className="space-y-2">
               <div className="flex items-center justify-between text-[11px] text-slate-500 font-mono">
-                <span>Per-Trial Latency (ms)</span>
+                <span>{isAz ? "Sınaqlar üzrə Gecikmə (ms)" : "Per-Trial Latency (ms)"}</span>
                 <span className="flex items-center gap-3">
                   <span className="flex items-center gap-1">
-                    <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500 inline-block" /> Correct
+                    <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500 inline-block" /> {isAz ? "Düzgün" : "Correct"}
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2.5 h-2.5 rounded-xs bg-rose-500 inline-block" /> Error / Misclick
+                    <span className="w-2.5 h-2.5 rounded-xs bg-rose-500 inline-block" /> {isAz ? "Xəta / Yanlış" : "Error / Misclick"}
                   </span>
                 </span>
               </div>
@@ -1180,7 +1433,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                 <div className="p-3 bg-white rounded-lg border border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs font-semibold text-slate-700">
-                      <span>Congruent (Facilitation)</span>
+                      <span>{isAz ? "Uyğun (Asanlaşdırma)" : "Congruent (Facilitation)"}</span>
                       <span className="font-mono text-emerald-700">
                         {meanCongruentRt} ms (n={congruentTrials.length})
                       </span>
@@ -1198,7 +1451,7 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs font-semibold text-slate-700">
-                      <span>Incongruent (Interference)</span>
+                      <span>{isAz ? "Uyğunsuz (Müdaxilə)" : "Incongruent (Interference)"}</span>
                       <span className="font-mono text-amber-700">
                         {meanIncongruentRt} ms (n={incongruentTrials.length})
                       </span>
@@ -1223,17 +1476,18 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
             <div className="space-y-1">
               <div className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-emerald-600" />
-                Commit Empirical Session to Platform Ledger
+                {isAz ? "Empirik Sessiyanı Platforma Reyestrinə Təsdiqləyin" : "Commit Empirical Session to Platform Ledger"}
               </div>
               <p className="text-[11px] text-slate-600">
-                Lock this human trial stream with a cryptographic SHA-256 digest and advance the study state machine to
-                LOCKED.
+                {isAz
+                  ? "Bu insan sınağı axınını kriptoqrafik SHA-256 xülasəsi ilə kilidləyin və tədqiqat vəziyyət maşınını LOCKED mərhələsinə keçirin."
+                  : "Lock this human trial stream with a cryptographic SHA-256 digest and advance the study state machine to LOCKED."}
               </p>
             </div>
 
             {committedResult ? (
               <div className="text-xs font-mono bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-2 rounded-lg break-all">
-                <span className="font-bold">SEALED (SHA-256): </span>
+                <span className="font-bold">{isAz ? "MÖHÜRLƏNDİ (SHA-256): " : "SEALED (SHA-256): "}</span>
                 {committedResult.checksum}
               </div>
             ) : (
@@ -1242,7 +1496,9 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                 disabled={committing}
                 className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow-xs transition-colors flex items-center gap-2 whitespace-nowrap"
               >
-                {committing ? "Sealing SHA-256..." : "Lock & Commit Session"}
+                {committing
+                  ? isAz ? "SHA-256 Möhürlənir..." : "Sealing SHA-256..."
+                  : isAz ? "Kilidlə və Sessiyanı Təsdiqlə" : "Lock & Commit Session"}
               </button>
             )}
           </div>
@@ -1251,19 +1507,21 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
           <div className="space-y-2">
             <h4 className="text-xs font-semibold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
               <BarChart3 className="h-3.5 w-3.5 text-blue-600" />
-              Trial-by-Trial Empirical Event Log ({recordedTrials.length} trials)
+              {isAz
+                ? `Sınaqlar üzrə Empirik Hadisə Jurnalı (${recordedTrials.length} sınaq)`
+                : `Trial-by-Trial Empirical Event Log (${recordedTrials.length} trials)`}
             </h4>
 
             <div className="border border-slate-200 rounded-xl overflow-x-auto max-h-[280px]">
               <table className="w-full text-left text-xs">
                 <thead className="bg-slate-50 text-slate-600 text-[11px] font-semibold border-b border-slate-200 sticky top-0">
                   <tr>
-                    <th className="px-3 py-2 font-mono">Trial</th>
-                    <th className="px-3 py-2">Condition</th>
-                    <th className="px-3 py-2">Response</th>
-                    <th className="px-3 py-2">Expected</th>
-                    <th className="px-3 py-2">Latency (RT)</th>
-                    <th className="px-3 py-2 text-right">Result</th>
+                    <th className="px-3 py-2 font-mono">{isAz ? "Sınaq" : "Trial"}</th>
+                    <th className="px-3 py-2">{isAz ? "Şərt" : "Condition"}</th>
+                    <th className="px-3 py-2">{isAz ? "Cavab" : "Response"}</th>
+                    <th className="px-3 py-2">{isAz ? "Gözlənilən" : "Expected"}</th>
+                    <th className="px-3 py-2">{isAz ? "Gecikmə (RT)" : "Latency (RT)"}</th>
+                    <th className="px-3 py-2 text-right">{isAz ? "Nəticə" : "Result"}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 font-mono text-[11px]">
@@ -1277,11 +1535,11 @@ export const InteractiveTestChamber: React.FC<{ initialParadigm?: TestParadigmId
                       <td className="px-3 py-1.5 text-right">
                         {t.correct ? (
                           <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">
-                            PASS
+                            {isAz ? "UĞURLU" : "PASS"}
                           </span>
                         ) : (
                           <span className="text-rose-700 bg-rose-50 px-2 py-0.5 rounded font-bold">
-                            FAIL
+                            {isAz ? "XƏTA" : "FAIL"}
                           </span>
                         )}
                       </td>

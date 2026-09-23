@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header.js";
 import { OverviewTab } from "./components/OverviewTab.js";
 import { NineLevelArchitectureTab } from "./components/NineLevelArchitectureTab.js";
@@ -13,6 +13,8 @@ import { ScientificGovernanceTab } from "./components/ScientificGovernanceTab.js
 import { AuditReproducibilityTab } from "./components/AuditReproducibilityTab.js";
 import { ModelRevisionTab } from "./components/ModelRevisionTab.js";
 import { AboutTab } from "./components/AboutTab.js";
+import { ScientificBoundaryTab } from "./components/ScientificBoundaryTab.js";
+import { ApiExplorerTab } from "./components/ApiExplorerTab.js";
 import { CommandPalette } from "./components/CommandPalette.js";
 import { LifecycleTourModal } from "./components/LifecycleTourModal.js";
 import { initLanguage } from "./i18n.js";
@@ -100,6 +102,8 @@ export function App() {
         {activeTab === "audit-reproducibility" && <AuditReproducibilityTab />}
         {activeTab === "l8-model-revision" && <ModelRevisionTab />}
         {activeTab === "about" && <AboutTab />}
+        {activeTab === "scientific-boundary" && <ScientificBoundaryTab />}
+        {activeTab === "api-explorer" && <ApiExplorerTab />}
       </main>
 
       {/* Global Command Palette (Cmd+K) */}

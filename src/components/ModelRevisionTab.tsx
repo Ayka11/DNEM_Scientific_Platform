@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ModelRevisionRecord } from "../types.js";
+import { useLanguage } from "../i18n.js";
 import {
   GitBranch,
   GitCommit,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 export const ModelRevisionTab: React.FC = () => {
+  const { isAz } = useLanguage();
   const [revisions, setRevisions] = useState<ModelRevisionRecord[]>([]);
   const [selectedRevision, setSelectedRevision] = useState<ModelRevisionRecord | null>(null);
 
@@ -71,12 +73,12 @@ export const ModelRevisionTab: React.FC = () => {
       <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
           <GitBranch className="h-5 w-5 text-blue-600" />
-          L8 Model Revision Lineage Engine v2.0
+          {isAz ? "L8 Model Reviziya Silsiləsi Mühərriki v2.0" : "L8 Model Revision Lineage Engine v2.0"}
         </h2>
         <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
-          Connects the persisted research cycle to explicit evidence-linked model revision and prepares successor research
-          cycles. Prior records are never overwritten. Model updates require explicit empirical reasons, diff contracts, and
-          cryptographic provenance anchors.
+          {isAz
+            ? "Davamlı tədqiqat dövrünü açıq sübutla əlaqəli model reviziyasına bağlayır və sonrakı tədqiqat dövrlərini hazırlayır. Əvvəlki qeydlər heç vaxt üzərinə yazılmır. Model yeniləmələri açıq empirik səbəblər, fərq müqavilələri və kriptoqrafik mənşə lövbərləri tələb edir."
+            : "Connects the persisted research cycle to explicit evidence-linked model revision and prepares successor research cycles. Prior records are never overwritten. Model updates require explicit empirical reasons, diff contracts, and cryptographic provenance anchors."}
         </p>
       </div>
 
@@ -87,12 +89,14 @@ export const ModelRevisionTab: React.FC = () => {
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-4">
             <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
               <Plus className="h-4 w-4 text-blue-600" />
-              Commit Formal Model Revision
+              {isAz ? "Formal Model Reviziyasını Təsdiqlə" : "Commit Formal Model Revision"}
             </h3>
 
             <form onSubmit={handleCreateRevision} className="space-y-3 text-xs">
               <div>
-                <label className="font-semibold text-slate-700 block mb-1">New Model Identifier</label>
+                <label className="font-semibold text-slate-700 block mb-1">
+                  {isAz ? "Yeni Model İdentifikatoru" : "New Model Identifier"}
+                </label>
                 <input
                   type="text"
                   required
@@ -103,7 +107,9 @@ export const ModelRevisionTab: React.FC = () => {
               </div>
 
               <div>
-                <label className="font-semibold text-slate-700 block mb-1">Parent Model Identifier</label>
+                <label className="font-semibold text-slate-700 block mb-1">
+                  {isAz ? "Ana Model İdentifikatoru" : "Parent Model Identifier"}
+                </label>
                 <input
                   type="text"
                   value={parentModelId}
@@ -113,7 +119,9 @@ export const ModelRevisionTab: React.FC = () => {
               </div>
 
               <div>
-                <label className="font-semibold text-slate-700 block mb-1">Empirical Justification / Reason</label>
+                <label className="font-semibold text-slate-700 block mb-1">
+                  {isAz ? "Empirik Əsaslandırma / Səbəb" : "Empirical Justification / Reason"}
+                </label>
                 <textarea
                   rows={2}
                   required
@@ -125,7 +133,9 @@ export const ModelRevisionTab: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="font-semibold text-slate-700 block mb-1">Target Component</label>
+                  <label className="font-semibold text-slate-700 block mb-1">
+                    {isAz ? "Hədəf Komponent" : "Target Component"}
+                  </label>
                   <input
                     type="text"
                     value={componentName}
@@ -134,7 +144,9 @@ export const ModelRevisionTab: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="font-semibold text-slate-700 block mb-1">Action Type</label>
+                  <label className="font-semibold text-slate-700 block mb-1">
+                    {isAz ? "Əməliyyat Növü" : "Action Type"}
+                  </label>
                   <select
                     value={action}
                     onChange={(e) => setAction(e.target.value)}
@@ -148,7 +160,9 @@ export const ModelRevisionTab: React.FC = () => {
               </div>
 
               <div>
-                <label className="font-semibold text-slate-700 block mb-1">Parameter Diff (+ / -)</label>
+                <label className="font-semibold text-slate-700 block mb-1">
+                  {isAz ? "Parametr Fərqi (+ / -)" : "Parameter Diff (+ / -)"}
+                </label>
                 <textarea
                   rows={3}
                   value={diffText}
@@ -162,7 +176,7 @@ export const ModelRevisionTab: React.FC = () => {
                 className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-xs transition-colors flex items-center justify-center gap-1.5"
               >
                 <GitCommit className="h-4 w-4" />
-                Commit L8 Revision Record
+                {isAz ? "L8 Reviziya Qeydini Təsdiqlə" : "Commit L8 Revision Record"}
               </button>
             </form>
           </div>
@@ -171,7 +185,7 @@ export const ModelRevisionTab: React.FC = () => {
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-3">
             <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
               <History className="h-3.5 w-3.5 text-slate-400" />
-              Lineage Chronology ({revisions.length})
+              {isAz ? `Silsilə Xronologiyası (${revisions.length})` : `Lineage Chronology (${revisions.length})`}
             </h3>
 
             <div className="space-y-2">
@@ -196,7 +210,9 @@ export const ModelRevisionTab: React.FC = () => {
                     <div className="text-[11px] text-slate-600 line-clamp-1">{rev.reason}</div>
                     <div className="text-[10px] text-slate-400 font-mono mt-1 flex justify-between">
                       <span>{rev.revision_id}</span>
-                      <span>{rev.changes.length} change(s)</span>
+                      <span>
+                        {isAz ? `${rev.changes.length} dəyişiklik` : `${rev.changes.length} change(s)`}
+                      </span>
                     </div>
                   </div>
                 );
@@ -222,21 +238,26 @@ export const ModelRevisionTab: React.FC = () => {
                   </span>
                 </div>
                 <div className="text-xs text-purple-700 font-mono mt-1">
-                  Parent Model: {selectedRevision.parent_model_id || "Root Baseline (None)"}
+                  {isAz ? "Ana Model:" : "Parent Model:"}{" "}
+                  {selectedRevision.parent_model_id || (isAz ? "Kök Baza (Yoxdur)" : "Root Baseline (None)")}
                 </div>
                 <p className="text-xs text-slate-700 mt-2 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200">
-                  <strong>Revision Justification:</strong> {selectedRevision.reason}
+                  <strong>{isAz ? "Reviziya Əsaslandırması:" : "Revision Justification:"}</strong> {selectedRevision.reason}
                 </p>
               </div>
 
               {/* Provenance Cryptographic Anchors */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
-                  <span className="text-slate-400 text-[10px] uppercase font-semibold">Decision Head Hash</span>
+                  <span className="text-slate-400 text-[10px] uppercase font-semibold">
+                    {isAz ? "Qərar Zirvəsi Heşi" : "Decision Head Hash"}
+                  </span>
                   <div className="text-slate-900 break-all">{selectedRevision.decision_head_hash}</div>
                 </div>
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
-                  <span className="text-slate-400 text-[10px] uppercase font-semibold">Evidence Anchor Hash</span>
+                  <span className="text-slate-400 text-[10px] uppercase font-semibold">
+                    {isAz ? "Sübut Lövbəri Heşi" : "Evidence Anchor Hash"}
+                  </span>
                   <div className="text-slate-900 break-all">{selectedRevision.evidence_anchor_hash}</div>
                 </div>
               </div>
@@ -245,7 +266,9 @@ export const ModelRevisionTab: React.FC = () => {
               <div className="space-y-3">
                 <h4 className="text-xs font-semibold text-slate-800 uppercase tracking-wider flex items-center gap-2">
                   <FileCode className="h-4 w-4 text-blue-600" />
-                  Model Change Delta Contracts ({selectedRevision.changes.length})
+                  {isAz
+                    ? `Model Dəyişikliyi Delta Müqavilələri (${selectedRevision.changes.length})`
+                    : `Model Change Delta Contracts (${selectedRevision.changes.length})`}
                 </h4>
 
                 <div className="space-y-3">
@@ -269,18 +292,30 @@ export const ModelRevisionTab: React.FC = () => {
               <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-1.5 text-xs text-blue-950">
                 <div className="font-semibold flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-blue-600" />
-                  Successor Research Cycle Descriptor Prepared
+                  {isAz ? "Sonrakı Tədqiqat Dövrü Deskriptoru Hazırlandı" : "Successor Research Cycle Descriptor Prepared"}
                 </div>
                 <p className="text-blue-800 text-[11px] leading-relaxed">
-                  Successor Cycle ID: <span className="font-mono font-bold">{selectedRevision.successor_cycle_id}</span>.
-                  In accordance with the DNEM v7.7 governance guarantee, the successor research cycle is a descriptor only.
-                  No new experiment is executed automatically without explicit human preregistration.
+                  {isAz ? (
+                    <>
+                      Sonrakı Dövr ID: <span className="font-mono font-bold">{selectedRevision.successor_cycle_id}</span>.
+                      DNEM v7.7 idarəetmə zəmanətinə uyğun olaraq, sonrakı tədqiqat dövrü yalnız deskriptordur.
+                      Açıq insan öncədən qeydiyyatı olmadan heç bir yeni eksperiment avtomatik icra edilmir.
+                    </>
+                  ) : (
+                    <>
+                      Successor Cycle ID: <span className="font-mono font-bold">{selectedRevision.successor_cycle_id}</span>.
+                      In accordance with the DNEM v7.7 governance guarantee, the successor research cycle is a descriptor only.
+                      No new experiment is executed automatically without explicit human preregistration.
+                    </>
+                  )}
                 </p>
               </div>
             </div>
           ) : (
             <div className="bg-white p-12 rounded-xl border border-slate-200 text-center text-slate-400 text-xs italic">
-              Select or commit a model revision to inspect its lineage diff.
+              {isAz
+                ? "Silsilə fərqini yoxlamaq üçün model reviziyasını seçin və ya təsdiqləyin."
+                : "Select or commit a model revision to inspect its lineage diff."}
             </div>
           )}
         </div>

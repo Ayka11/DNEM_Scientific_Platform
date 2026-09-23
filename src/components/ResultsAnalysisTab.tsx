@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StatisticalAnalysisPlan } from "../types.js";
+import { useLanguage } from "../i18n.js";
 import {
   BarChart3,
   Play,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 export const ResultsAnalysisTab: React.FC = () => {
+  const { isAz } = useLanguage();
   const [studyId, setStudyId] = useState("DNEM-STUDY-001");
   const [outcomeMid, setOutcomeMid] = useState("C01-01");
   const [sampleSize, setSampleSize] = useState(80);
@@ -52,12 +54,14 @@ export const ResultsAnalysisTab: React.FC = () => {
       <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
           <BarChart3 className="h-5 w-5 text-blue-600" />
-          Results & Statistical Analysis Plan (SAP) Execution
+          {isAz
+            ? "Nəticələr və Statistik Analiz Planının (SAP) İcrası"
+            : "Results & Statistical Analysis Plan (SAP) Execution"}
         </h2>
         <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
-          Automated preregistered statistical plan executor. Evaluates effect sizes, uncertainty confidence intervals,
-          multiplicity corrections (Benjamini-Hochberg FDR), and sensitivity robustness to ensure findings are not artifacts
-          of researcher degrees of freedom.
+          {isAz
+            ? "Avtomatlaşdırılmış öncədən qeydiyyatdan keçmiş statistik plan icraçısı. Tədqiqatçının sərbəstlik dərəcələrinin artefaktı olmamasını təmin etmək üçün təsir ölçülərini, qeyri-müəyyənlik etibarlılıq intervallarını, çoxluq korreksiyalarını (Bencamini-Hoxberq FDR) və həssaslıq dayanıqlığını qiymətləndirir."
+            : "Automated preregistered statistical plan executor. Evaluates effect sizes, uncertainty confidence intervals, multiplicity corrections (Benjamini-Hochberg FDR), and sensitivity robustness to ensure findings are not artifacts of researcher degrees of freedom."}
         </p>
       </div>
 
@@ -66,12 +70,14 @@ export const ResultsAnalysisTab: React.FC = () => {
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-4">
           <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
             <Sliders className="h-4 w-4 text-blue-600" />
-            Analysis Parameters
+            {isAz ? "Analiz Parametrləri" : "Analysis Parameters"}
           </h3>
 
           <div className="space-y-3 text-xs">
             <div>
-              <label className="font-semibold text-slate-700 block mb-1">Study Identifier</label>
+              <label className="font-semibold text-slate-700 block mb-1">
+                {isAz ? "Tədqiqat İdentifikatoru" : "Study Identifier"}
+              </label>
               <input
                 type="text"
                 value={studyId}
@@ -81,7 +87,9 @@ export const ResultsAnalysisTab: React.FC = () => {
             </div>
 
             <div>
-              <label className="font-semibold text-slate-700 block mb-1">Primary Outcome Variable</label>
+              <label className="font-semibold text-slate-700 block mb-1">
+                {isAz ? "Əsas Nəticə Dəyişəni" : "Primary Outcome Variable"}
+              </label>
               <select
                 value={outcomeMid}
                 onChange={(e) => setOutcomeMid(e.target.value)}
@@ -96,7 +104,7 @@ export const ResultsAnalysisTab: React.FC = () => {
 
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label className="font-semibold text-slate-700">Sample Size (N)</label>
+                <label className="font-semibold text-slate-700">{isAz ? "Nümunə Ölçüsü (N)" : "Sample Size (N)"}</label>
                 <span className="font-mono font-bold text-blue-600">{sampleSize}</span>
               </div>
               <input
@@ -116,7 +124,9 @@ export const ResultsAnalysisTab: React.FC = () => {
                 className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-lg font-semibold shadow-xs transition-colors flex items-center justify-center gap-2"
               >
                 <Play className="h-4 w-4" />
-                {loading ? "Executing SAP Pipeline..." : "Execute Preregistered SAP"}
+                {loading
+                  ? isAz ? "SAP Boru Kəməri İcra Edilir..." : "Executing SAP Pipeline..."
+                  : isAz ? "Öncədən Qeydiyyatlı SAP-ı İcra Et" : "Execute Preregistered SAP"}
               </button>
             </div>
           </div>
@@ -133,7 +143,7 @@ export const ResultsAnalysisTab: React.FC = () => {
                   <div className="text-xl font-bold text-slate-900 font-mono">
                     d = {analysisResult.effect_size_estimate}
                   </div>
-                  <p className="text-[10px] text-slate-500">Medium Effect Size</p>
+                  <p className="text-[10px] text-slate-500">{isAz ? "Orta Təsir Ölçüsü" : "Medium Effect Size"}</p>
                 </div>
 
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-1">
@@ -141,7 +151,7 @@ export const ResultsAnalysisTab: React.FC = () => {
                   <div className="text-sm font-bold text-slate-900 font-mono truncate">
                     [{analysisResult.confidence_interval[0]}, {analysisResult.confidence_interval[1]}]
                   </div>
-                  <p className="text-[10px] text-slate-500">Excludes null (0.00)</p>
+                  <p className="text-[10px] text-slate-500">{isAz ? "Sıfırı (0.00) istisna edir" : "Excludes null (0.00)"}</p>
                 </div>
 
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-1">
@@ -149,22 +159,22 @@ export const ResultsAnalysisTab: React.FC = () => {
                   <div className="text-xl font-bold text-emerald-600 font-mono">
                     {analysisResult.fdr_adjusted_p}
                   </div>
-                  <p className="text-[10px] text-slate-500">Significant (q &lt; 0.05)</p>
+                  <p className="text-[10px] text-slate-500">{isAz ? "Əhəmiyyətli (q < 0.05)" : "Significant (q < 0.05)"}</p>
                 </div>
 
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-1">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase">Sensitivity</span>
+                  <span className="text-[10px] font-semibold text-slate-400 uppercase">{isAz ? "Həssaslıq" : "Sensitivity"}</span>
                   <div className="text-sm font-bold text-blue-600 font-mono">
                     {analysisResult.sensitivity_status}
                   </div>
-                  <p className="text-[10px] text-slate-500">Passed perturbation test</p>
+                  <p className="text-[10px] text-slate-500">{isAz ? "Perturbasiya testindən keçdi" : "Passed perturbation test"}</p>
                 </div>
               </div>
 
               {/* Hypotheses Evaluation */}
               <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-3">
                 <h4 className="text-xs font-semibold text-slate-800 uppercase tracking-wider">
-                  Hypotheses Verification
+                  {isAz ? "Hipotezlərin Təsdiqi" : "Hypotheses Verification"}
                 </h4>
                 <div className="space-y-2">
                   {analysisResult.hypotheses.map((hyp, i) => (
@@ -182,38 +192,44 @@ export const ResultsAnalysisTab: React.FC = () => {
               {/* Multiplicity & Exclusion Audit */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2 text-xs">
-                  <div className="font-semibold text-slate-800">Multiplicity Governance</div>
+                  <div className="font-semibold text-slate-800">{isAz ? "Çoxluğun İdarə Edilməsi" : "Multiplicity Governance"}</div>
                   <div className="flex justify-between py-1 border-b border-slate-100">
-                    <span className="text-slate-500">Preregistered Planned Tests:</span>
+                    <span className="text-slate-500">{isAz ? "Öncədən Qeydiyyatlı Testlər:" : "Preregistered Planned Tests:"}</span>
                     <span className="font-mono font-semibold text-slate-900">{analysisResult.multiplicity_tests}</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-100">
-                    <span className="text-slate-500">Unregistered Post-Hoc Tests:</span>
+                    <span className="text-slate-500">{isAz ? "Qeydiyyatsız Post-Hoc Testlər:" : "Unregistered Post-Hoc Tests:"}</span>
                     <span className="font-mono font-semibold text-emerald-600">
-                      {analysisResult.unregistered_tests} (0% inflation)
+                      {analysisResult.unregistered_tests} {isAz ? "(0% inflyasiya)" : "(0% inflation)"}
                     </span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-slate-500">Correction Method:</span>
+                    <span className="text-slate-500">{isAz ? "Düzəliş Metodu:" : "Correction Method:"}</span>
                     <span className="font-mono text-slate-900">Benjamini-Hochberg FDR</span>
                   </div>
                 </div>
 
                 <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2 text-xs">
-                  <div className="font-semibold text-slate-800">Data Exclusion & Outlier Audit</div>
+                  <div className="font-semibold text-slate-800">
+                    {isAz ? "Məlumat İstisnası və Kənarlaşmalar" : "Data Exclusion & Outlier Audit"}
+                  </div>
                   <div className="flex justify-between py-1 border-b border-slate-100">
-                    <span className="text-slate-500">Trial Exclusion Rate:</span>
+                    <span className="text-slate-500">{isAz ? "Sınaqların İstisna Dərəcəsi:" : "Trial Exclusion Rate:"}</span>
                     <span className="font-mono font-semibold text-slate-900">
                       {(analysisResult.exclusion_rate * 100).toFixed(1)}%
                     </span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-100">
-                    <span className="text-slate-500">Exclusion Rule Integrity:</span>
-                    <span className="font-mono font-semibold text-emerald-600">COMPLIANT (Pre-frozen)</span>
+                    <span className="text-slate-500">{isAz ? "Qayda Bütövlüyü:" : "Exclusion Rule Integrity:"}</span>
+                    <span className="font-mono font-semibold text-emerald-600">
+                      {isAz ? "UYĞUN (Öncədən dondurulmuş)" : "COMPLIANT (Pre-frozen)"}
+                    </span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-slate-500">Gate Verification:</span>
-                    <span className="font-mono text-slate-900">NO AD-HOC TRUNCATION</span>
+                    <span className="text-slate-500">{isAz ? "Qapı Yoxlanışı:" : "Gate Verification:"}</span>
+                    <span className="font-mono text-slate-900">
+                      {isAz ? "AD-HOC KƏSİLMƏ YOXDUR" : "NO AD-HOC TRUNCATION"}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -221,13 +237,15 @@ export const ResultsAnalysisTab: React.FC = () => {
               {/* Raw JSON */}
               <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold text-slate-700">Raw Statistical Output Record</span>
+                  <span className="text-xs font-semibold text-slate-700">
+                    {isAz ? "Xam Statistik Nəticə Qeydi" : "Raw Statistical Output Record"}
+                  </span>
                   <button
                     onClick={handleCopy}
                     className="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1 font-sans"
                   >
                     {copied ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
-                    {copied ? "Copied" : "Copy JSON"}
+                    {copied ? (isAz ? "Kopyalandı" : "Copied") : (isAz ? "JSON Kopyala" : "Copy JSON")}
                   </button>
                 </div>
                 <div className="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs max-h-60 overflow-y-auto">
@@ -237,7 +255,9 @@ export const ResultsAnalysisTab: React.FC = () => {
             </div>
           ) : (
             <div className="bg-white p-16 rounded-xl border border-slate-200 text-center text-slate-400 text-xs italic">
-              Click "Execute Preregistered SAP" to run the statistical pipeline.
+              {isAz
+                ? 'Statistik boru kəmərini işə salmaq üçün "Öncədən Qeydiyyatlı SAP-ı İcra Et" düyməsinə klikləyin.'
+                : 'Click "Execute Preregistered SAP" to run the statistical pipeline.'}
             </div>
           )}
         </div>

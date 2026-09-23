@@ -20,12 +20,15 @@ import {
   ArrowRight,
   X,
   Sparkles,
+  ShieldAlert,
+  Terminal,
 } from "lucide-react";
+import { useLanguage } from "../i18n.js";
 
 export interface SearchItem {
   id: string;
   title: string;
-  category: "Navigation" | "Testing Chamber" | "Actions & Governance" | "Scientific Reference";
+  category: string;
   description: string;
   icon: React.ReactNode;
   action: () => void;
@@ -47,6 +50,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   onLaunchTest,
   onOpenTour,
 }) => {
+  const { isAz } = useLanguage();
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -69,248 +73,330 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     }
   }, [isOpen]);
 
+  const catNav = isAz ? "Naviqasiya" : "Navigation";
+  const catChamber = isAz ? "Test Kamerası" : "Testing Chamber";
+  const catActions = isAz ? "Əməliyyatlar və İdarəetmə" : "Actions & Governance";
+
   const items: SearchItem[] = useMemo(
     () => [
       // Navigation Tabs
       {
         id: "nav-overview",
-        title: "Platform Overview",
-        category: "Navigation",
-        description: "Scientific platform dashboard, operational statistics, and quick launch pad",
+        title: isAz ? "Platformanın Ümumi Baxışı" : "Platform Overview",
+        category: catNav,
+        description: isAz
+          ? "Elmi platforma paneli, əməliyyat statistikası və sürətli başlanğıc sahəsi"
+          : "Scientific platform dashboard, operational statistics, and quick launch pad",
         icon: <LayoutDashboard className="h-4 w-4 text-blue-600" />,
         action: () => {
           onNavigate("overview");
           onClose();
         },
-        keywords: ["dashboard", "home", "stats", "metrics"],
+        keywords: ["dashboard", "home", "stats", "metrics", "ümumi", "baxış", "statistika"],
       },
       {
         id: "nav-nine-level",
-        title: "9-Level Architecture (L0-L8)",
-        category: "Navigation",
-        description: "Explore the 9 vertical verification levels from physics (L0) to model revision (L8)",
+        title: isAz ? "9 Səviyyəli Arxitektura (L0-L8)" : "9-Level Architecture (L0-L8)",
+        category: catNav,
+        description: isAz
+          ? "Fizikadan (L0) model reviziyasına (L8) qədər 9 şaquli yoxlama səviyyəsini araşdırın"
+          : "Explore the 9 vertical verification levels from physics (L0) to model revision (L8)",
         icon: <Layers className="h-4 w-4 text-indigo-600" />,
         action: () => {
           onNavigate("nine-level-architecture");
           onClose();
         },
-        keywords: ["l0", "l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "hierarchy", "spec"],
+        keywords: ["l0", "l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "hierarchy", "spec", "arxitektura", "səviyyə"],
       },
       {
         id: "nav-study-builder",
-        title: "Study Builder",
-        category: "Navigation",
-        description: "Interactive experiment configuration, protocol parameters, and battery designer",
+        title: isAz ? "Tədqiqat Qurucusu" : "Study Builder",
+        category: catNav,
+        description: isAz
+          ? "İnteraktiv eksperiment konfiqurasiyası, protokol parametrləri və batareya dizayneri"
+          : "Interactive experiment configuration, protocol parameters, and battery designer",
         icon: <Cpu className="h-4 w-4 text-cyan-600" />,
         action: () => {
           onNavigate("study-builder");
           onClose();
         },
-        keywords: ["design", "protocol", "parameters", "setup"],
+        keywords: ["design", "protocol", "parameters", "setup", "tədqiqat", "qurucu", "protokol"],
       },
       {
         id: "nav-registry",
-        title: "Measurement Registry",
-        category: "Navigation",
-        description: "Registry of 12 operational cognitive measurement specifications and formal bounds",
+        title: isAz ? "Ölçmə Reyestri" : "Measurement Registry",
+        category: catNav,
+        description: isAz
+          ? "12 əməliyyat koqnitiv ölçmə spesifikasiyası və rəsmi hədlər reyestri"
+          : "Registry of 12 operational cognitive measurement specifications and formal bounds",
         icon: <SlidersHorizontal className="h-4 w-4 text-teal-600" />,
         action: () => {
           onNavigate("measurement-registry");
           onClose();
         },
-        keywords: ["constructs", "stroop", "flanker", "nback", "matrix", "c01", "c05"],
+        keywords: ["constructs", "stroop", "flanker", "nback", "matrix", "c01", "c05", "ölçmə", "reyestr"],
       },
       {
         id: "nav-workspace",
-        title: "Experiment Workspace",
-        category: "Navigation",
-        description: "Configure batch executions, synthetic participants, and runtime environments",
+        title: isAz ? "Eksperiment İş Sahəsi" : "Experiment Workspace",
+        category: catNav,
+        description: isAz
+          ? "Paket icraları, sintetik iştirakçıları və icra mühitlərini konfiqurasiya edin"
+          : "Configure batch executions, synthetic participants, and runtime environments",
         icon: <FlaskConical className="h-4 w-4 text-amber-600" />,
         action: () => {
           onNavigate("experiment-workspace");
           onClose();
         },
-        keywords: ["batch", "synthetic", "trials", "session"],
+        keywords: ["batch", "synthetic", "trials", "session", "eksperiment", "iş sahəsi", "sınaqlar"],
       },
       {
         id: "nav-runtime",
-        title: "Research Runtime & Test Chamber",
-        category: "Navigation",
-        description: "Live participant test chamber and synthetic execution engine with event verification",
+        title: isAz ? "Tədqiqat İcra Mühiti və Test Kamerası" : "Research Runtime & Test Chamber",
+        category: catNav,
+        description: isAz
+          ? "Canlı iştirakçı test kamerası və hadisə yoxlaması ilə sintetik icra mühərriki"
+          : "Live participant test chamber and synthetic execution engine with event verification",
         icon: <Play className="h-4 w-4 text-emerald-600" />,
         action: () => {
           onNavigate("research-runtime");
           onClose();
         },
-        keywords: ["interactive", "live test", "reaction time", "chamber", "participant"],
+        keywords: ["interactive", "live test", "reaction time", "chamber", "participant", "canlı", "icra", "kamera"],
       },
       {
         id: "nav-results",
-        title: "Results & Analysis",
-        category: "Navigation",
-        description: "Psychometric statistical distributions, confidence intervals, and effect sizes",
+        title: isAz ? "Nəticələr və Analiz" : "Results & Analysis",
+        category: catNav,
+        description: isAz
+          ? "Psixometrik statistik paylanmalar, etibarlılıq intervalları və təsir ölçüləri"
+          : "Psychometric statistical distributions, confidence intervals, and effect sizes",
         icon: <BarChart3 className="h-4 w-4 text-purple-600" />,
         action: () => {
           onNavigate("results-analysis");
           onClose();
         },
-        keywords: ["charts", "statistics", "data", "cohen", "distributions"],
+        keywords: ["charts", "statistics", "data", "cohen", "distributions", "nəticələr", "analiz", "qrafik"],
       },
       {
         id: "nav-claim-graph",
-        title: "Evidence & Claim Graph",
-        category: "Navigation",
-        description: "Formal DAG linking raw trial observations to scientific assertions and falsifiers",
+        title: isAz ? "Sübut və İddia Qrafı" : "Evidence & Claim Graph",
+        category: catNav,
+        description: isAz
+          ? "İlkin sınaq müşahidələrini elmi iddialara və təkzibedicilərə bağlayan rəsmi DAG"
+          : "Formal DAG linking raw trial observations to scientific assertions and falsifiers",
         icon: <GitMerge className="h-4 w-4 text-pink-600" />,
         action: () => {
           onNavigate("evidence-claim-graph");
           onClose();
         },
-        keywords: ["claims", "dag", "epistemology", "falsification", "graph"],
+        keywords: ["claims", "dag", "epistemology", "falsification", "graph", "sübut", "iddia", "qraf"],
       },
       {
         id: "nav-prereg",
-        title: "Protocols & Preregistration",
-        category: "Navigation",
-        description: "OSF-compatible preregistration schemas and frozen protocol manifests",
+        title: isAz ? "Protokollar və Öncədən Qeydiyyat" : "Protocols & Preregistration",
+        category: catNav,
+        description: isAz
+          ? "OSF uyğun öncədən qeydiyyat sxemləri və dondurulmuş protokol manifestləri"
+          : "OSF-compatible preregistration schemas and frozen protocol manifests",
         icon: <FileLock2 className="h-4 w-4 text-rose-600" />,
         action: () => {
           onNavigate("protocols-preregistration");
           onClose();
         },
-        keywords: ["osf", "freeze", "provenance", "preregistration"],
+        keywords: ["osf", "freeze", "provenance", "preregistration", "protokol", "qeydiyyat"],
       },
       {
         id: "nav-governance",
-        title: "Scientific Governance",
-        category: "Navigation",
-        description: "Peer-review audit trails, institutional IRB compliance, and reproducibility gates",
+        title: isAz ? "Elmi İdarəetmə" : "Scientific Governance",
+        category: catNav,
+        description: isAz
+          ? "Rəy auditi izləri, institusional IRB uyğunluğu və təkrarlanabilənlik qapıları"
+          : "Peer-review audit trails, institutional IRB compliance, and reproducibility gates",
         icon: <ShieldCheck className="h-4 w-4 text-blue-700" />,
         action: () => {
           onNavigate("scientific-governance");
           onClose();
         },
-        keywords: ["irb", "compliance", "ethics", "governance"],
+        keywords: ["irb", "compliance", "ethics", "governance", "idarəetmə", "etika", "audit"],
       },
       {
         id: "nav-audit",
-        title: "Audit & Reproducibility Ledger",
-        category: "Navigation",
-        description: "Cryptographic SHA-256 hash chains, run-time receipts, and deterministic replays",
+        title: isAz ? "Audit və Təkrarlanabilənlik Reyestri" : "Audit & Reproducibility Ledger",
+        category: catNav,
+        description: isAz
+          ? "Kriptoqrafik SHA-256 heş zəncirləri, icra qəbzləri və deterministik təkrar icralar"
+          : "Cryptographic SHA-256 hash chains, run-time receipts, and deterministic replays",
         icon: <History className="h-4 w-4 text-slate-700" />,
         action: () => {
           onNavigate("audit-reproducibility");
           onClose();
         },
-        keywords: ["sha256", "ledger", "hashes", "replay", "immutable"],
+        keywords: ["sha256", "ledger", "hashes", "replay", "immutable", "kriptoqrafiya", "heş"],
       },
       {
         id: "nav-model-revision",
-        title: "L8 Model Revision",
-        category: "Navigation",
-        description: "Bayesian prior updates, cognitive parameter estimation, and theory refinements",
+        title: isAz ? "L8 Model Reviziyası" : "L8 Model Revision",
+        category: catNav,
+        description: isAz
+          ? "Bayes ilkin ehtimallarının yenilənməsi, koqnitiv parametrlərin qiymətləndirilməsi və nəzəriyyə təkmilləşdirmələri"
+          : "Bayesian prior updates, cognitive parameter estimation, and theory refinements",
         icon: <GitBranch className="h-4 w-4 text-amber-700" />,
         action: () => {
           onNavigate("l8-model-revision");
           onClose();
         },
-        keywords: ["bayesian", "model", "revision", "theory"],
+        keywords: ["bayesian", "model", "revision", "theory", "bayes", "reviziya", "nəzəriyyə"],
+      },
+      {
+        id: "nav-boundary",
+        title: isAz ? "Elmi Sərhəd və Metodoloji Müqavilə" : "Scientific Boundary & Methodological Contract",
+        category: catNav,
+        description: isAz
+          ? "Əməliyyat elmi sərhədləri, falsifikasiya meyarları və formal imtina bəyannaməsi"
+          : "Operational scientific boundaries, falsification criteria, and formal disclaimer declaration",
+        icon: <ShieldAlert className="h-4 w-4 text-amber-600" />,
+        action: () => {
+          onNavigate("scientific-boundary");
+          onClose();
+        },
+        keywords: ["boundary", "disclaimer", "limits", "falsification", "sərhəd", "imtina", "bəyannamə"],
+      },
+      {
+        id: "nav-api-explorer",
+        title: isAz ? "İnteraktiv API Tədqiqatçısı" : "Interactive API Explorer",
+        category: catNav,
+        description: isAz
+          ? "Miqrasiya edilmiş REST son nöqtələrini (/api/v1/*) birbaşa real vaxtda icra və test edin"
+          : "Directly execute and test migrated backend REST endpoints (/api/v1/*) in real-time",
+        icon: <Terminal className="h-4 w-4 text-blue-600" />,
+        action: () => {
+          onNavigate("api-explorer");
+          onClose();
+        },
+        keywords: ["api", "rest", "endpoints", "curl", "health", "measurements", "server", "tədqiqatçı"],
       },
       {
         id: "nav-about",
-        title: "About & Documentation",
-        category: "Navigation",
-        description: "Scientific whitepaper, API specifications, and architectural documentation",
+        title: isAz ? "Haqqında və Sənədlər" : "About & Documentation",
+        category: catNav,
+        description: isAz
+          ? "Elmi texniki sənədlər, API spesifikasiyaları və arxitektura sənədləri"
+          : "Scientific whitepaper, API specifications, and architectural documentation",
         icon: <Info className="h-4 w-4 text-slate-600" />,
         action: () => {
           onNavigate("about");
           onClose();
         },
-        keywords: ["docs", "help", "whitepaper", "specification"],
+        keywords: ["docs", "help", "whitepaper", "specification", "haqqında", "sənədlər", "kömək"],
       },
 
       // Testing Chamber Direct Launches
       {
         id: "test-stroop",
-        title: "Launch Stroop Color-Word Interference (C05-01)",
-        category: "Testing Chamber",
-        description: "Live interactive test measuring inhibitory control and cognitive conflict latency",
+        title: isAz
+          ? "Stroop Rəng-Söz İnterferensiyasını Başlat (C05-01)"
+          : "Launch Stroop Color-Word Interference (C05-01)",
+        category: catChamber,
+        description: isAz
+          ? "Qadağanedici nəzarəti və koqnitiv münaqişə gecikməsini ölçən canlı interaktiv test"
+          : "Live interactive test measuring inhibitory control and cognitive conflict latency",
         icon: <Brain className="h-4 w-4 text-red-500" />,
         action: () => {
           if (onLaunchTest) onLaunchTest("C05-01");
           else onNavigate("research-runtime");
           onClose();
         },
-        keywords: ["stroop", "color", "word", "interference", "c05", "executive"],
+        keywords: ["stroop", "color", "word", "interference", "c05", "executive", "rəng", "söz", "münaqişə"],
       },
       {
         id: "test-nback",
-        title: "Launch Visual N-Back Working Memory (C02-01)",
-        category: "Testing Chamber",
-        description: "Continuous performance letter stream evaluating 2-back working memory buffer",
+        title: isAz
+          ? "Vizual N-Back İş Yaddaşı Testini Başlat (C02-01)"
+          : "Launch Visual N-Back Working Memory (C02-01)",
+        category: catChamber,
+        description: isAz
+          ? "2-back iş yaddaşı buferini qiymətləndirən davamlı hərf axını tapşırığı"
+          : "Continuous performance letter stream evaluating 2-back working memory buffer",
         icon: <Zap className="h-4 w-4 text-blue-500" />,
         action: () => {
           if (onLaunchTest) onLaunchTest("C02-01");
           else onNavigate("research-runtime");
           onClose();
         },
-        keywords: ["nback", "working memory", "c02", "letters", "2-back"],
+        keywords: ["nback", "working memory", "c02", "letters", "2-back", "yaddaş", "iş yaddaşı", "hərf"],
       },
       {
         id: "test-rt",
-        title: "Launch Simple & Choice Reaction Time (C03-01)",
-        category: "Testing Chamber",
-        description: "Sub-millisecond latency measurement for perceptual-motor processing speed",
+        title: isAz
+          ? "Sadə və Seçimli Reaksiya Vaxtını Başlat (C03-01)"
+          : "Launch Simple & Choice Reaction Time (C03-01)",
+        category: catChamber,
+        description: isAz
+          ? "Qavrayış-motor emalı sürəti üçün sub-millisaniyəlik gecikmə ölçümü"
+          : "Sub-millisecond latency measurement for perceptual-motor processing speed",
         icon: <Play className="h-4 w-4 text-amber-500" />,
         action: () => {
           if (onLaunchTest) onLaunchTest("C03-01");
           else onNavigate("research-runtime");
           onClose();
         },
-        keywords: ["reaction time", "latency", "speed", "c03", "choice rt"],
+        keywords: ["reaction time", "latency", "speed", "c03", "choice rt", "reaksiya", "sürət", "gecikmə"],
       },
       {
         id: "test-flanker",
-        title: "Launch Eriksen Flanker Task (C04-01)",
-        category: "Testing Chamber",
-        description: "Measures visual selective attention and spatial flanker arrow conflict resolution",
+        title: isAz
+          ? "Eriksen Flanker Tapşırığını Başlat (C04-01)"
+          : "Launch Eriksen Flanker Task (C04-01)",
+        category: catChamber,
+        description: isAz
+          ? "Vizual selektiv diqqəti və fəza ox münaqişəsinin həllini ölçür"
+          : "Measures visual selective attention and spatial flanker arrow conflict resolution",
         icon: <Brain className="h-4 w-4 text-emerald-500" />,
         action: () => {
           if (onLaunchTest) onLaunchTest("C04-01");
           else onNavigate("research-runtime");
           onClose();
         },
-        keywords: ["flanker", "eriksen", "arrows", "attention", "c04"],
+        keywords: ["flanker", "eriksen", "arrows", "attention", "c04", "oxlar", "diqqət", "fəza"],
       },
       {
         id: "test-matrix",
-        title: "Launch Progressive Matrix Reasoning (C01-01)",
-        category: "Testing Chamber",
-        description: "Visual inductive pattern completion assessing non-verbal fluid intelligence",
+        title: isAz
+          ? "Mütərəqqi Matris Mühakiməsini Başlat (C01-01)"
+          : "Launch Progressive Matrix Reasoning (C01-01)",
+        category: catChamber,
+        description: isAz
+          ? "Qeyri-verbal maye zəkanı qiymətləndirən vizual induktiv model tamamlama"
+          : "Visual inductive pattern completion assessing non-verbal fluid intelligence",
         icon: <Brain className="h-4 w-4 text-purple-500" />,
         action: () => {
           if (onLaunchTest) onLaunchTest("C01-01");
           else onNavigate("research-runtime");
           onClose();
         },
-        keywords: ["matrix", "fluid intelligence", "patterns", "c01", "raven"],
+        keywords: ["matrix", "fluid intelligence", "patterns", "c01", "raven", "matris", "zəka", "məntiq"],
       },
 
       // Guided Walkthrough & Actions
       {
         id: "action-tour",
-        title: "Start 12-State Lifecycle Guided Tour",
-        category: "Actions & Governance",
-        description: "Interactive walkthrough through the deterministic research lifecycle from DRAFT to LOCKED",
+        title: isAz
+          ? "12 Mərhələli Həyat Dövrü Bələdçili Turunu Başlat"
+          : "Start 12-State Lifecycle Guided Tour",
+        category: catActions,
+        description: isAz
+          ? "DRAFT-dan LOCKED-a qədər deterministik tədqiqat həyat dövrü üzrə interaktiv bələdçi"
+          : "Interactive walkthrough through the deterministic research lifecycle from DRAFT to LOCKED",
         icon: <BookOpen className="h-4 w-4 text-emerald-600" />,
         action: () => {
           if (onOpenTour) onOpenTour();
           onClose();
         },
-        keywords: ["tour", "walkthrough", "lifecycle", "guide", "12 states"],
+        keywords: ["tour", "walkthrough", "lifecycle", "guide", "12 states", "tur", "bələdçi", "həyat dövrü"],
       },
     ],
-    [onNavigate, onLaunchTest, onOpenTour, onClose]
+    [onNavigate, onLaunchTest, onOpenTour, onClose, isAz, catNav, catChamber, catActions]
   );
 
   const filteredItems = useMemo(() => {
@@ -365,7 +451,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               setQuery(e.target.value);
               setSelectedIndex(0);
             }}
-            placeholder="Search tabs, tests (Stroop, Flanker), lifecycle tour, or commands..."
+            placeholder={
+              isAz
+                ? "Bölmələri, testləri (Stroop, Flanker), həyat dövrü turunu və ya əmrləri axtarın..."
+                : "Search tabs, tests (Stroop, Flanker), lifecycle tour, or commands..."
+            }
             className="flex-1 bg-transparent border-none outline-hidden text-sm text-slate-900 placeholder:text-slate-400 font-sans"
           />
           {query && (
@@ -377,7 +467,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             </button>
           )}
           <span className="hidden sm:inline-flex items-center text-[10px] font-mono text-slate-400 bg-slate-200/80 px-1.5 py-0.5 rounded">
-            ESC to close
+            {isAz ? "Bağlamaq üçün ESC" : "ESC to close"}
           </span>
         </div>
 
@@ -386,7 +476,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           {filteredItems.length === 0 ? (
             <div className="p-8 text-center text-slate-500 text-sm">
               <Search className="h-8 w-8 text-slate-300 mx-auto mb-2" />
-              No results found for &ldquo;{query}&rdquo;
+              {isAz ? `“${query}” üzrə heç bir nəticə tapılmadı` : `No results found for “${query}”`}
             </div>
           ) : (
             filteredItems.map((item, index) => {
@@ -428,8 +518,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         {/* Footer shortcuts */}
         <div className="px-4 py-2.5 bg-slate-50 border-t border-slate-200 text-[11px] text-slate-500 flex items-center justify-between font-mono">
           <div className="flex items-center gap-3">
-            <span>&uarr;&darr; Navigate</span>
-            <span>&crarr; Select</span>
+            <span>{isAz ? "↑↓ Naviqasiya" : "↑↓ Navigate"}</span>
+            <span>{isAz ? "↵ Seçin" : "↵ Select"}</span>
           </div>
           <span>DNEM Scientific Platform</span>
         </div>

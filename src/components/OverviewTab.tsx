@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   BookOpen,
 } from "lucide-react";
+import { useLanguage } from "../i18n.js";
 
 interface OverviewTabProps {
   onNavigate: (tab: string) => void;
@@ -19,6 +20,7 @@ interface OverviewTabProps {
 }
 
 export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour }) => {
+  const { t, isAz } = useLanguage();
   const [stats, setStats] = useState({
     measurementsCount: 170,
     domainsCount: 34,
@@ -42,17 +44,17 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-mono">
             <Activity className="h-3.5 w-3.5 text-blue-400 animate-pulse" />
-            <span>DNEM v7.7 Implementation Baseline &bull; Deterministic Engine</span>
+            <span>{t("DNEM v7.7 Implementation Baseline • Deterministic Engine")}</span>
           </div>
 
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
-            Deterministic Neurocognitive Experimental Measurement Platform
+            {t("Deterministic Neurocognitive Experimental Measurement Platform")}
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            A unified scientific research operating environment bridging physical signal acquisition (L0),
-            neurobiology (L1), core cognition (L2), dynamic regulation (L3), intentional agency (L4), prospective meaning (L5),
-            social-ecological systems (L6), ontogenetic development (L7), and cryptographic meta-governance (L8).
+            {t(
+              "A unified scientific research operating environment bridging physical signal acquisition (L0), neurobiology (L1), core cognition (L2), dynamic regulation (L3), intentional agency (L4), prospective meaning (L5), social-ecological systems (L6), ontogenetic development (L7), and cryptographic meta-governance (L8)."
+            )}
           </p>
 
           <div className="pt-2 flex flex-wrap gap-3">
@@ -61,7 +63,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-semibold shadow-sm transition-all"
             >
               <Activity className="h-4 w-4" />
-              Take Live Cognitive Test
+              {t("Take Live Cognitive Test")}
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
             <button
@@ -69,21 +71,21 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold shadow-sm transition-all"
             >
               <Layers className="h-4 w-4" />
-              Explore 9-Level Architecture
+              {t("Explore 9-Level Architecture")}
             </button>
             <button
               onClick={() => onNavigate("study-builder")}
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-100 rounded-lg text-xs font-semibold border border-slate-600 transition-all"
             >
               <Cpu className="h-4 w-4 text-emerald-400" />
-              Launch Study Builder
+              {t("Launch Study Builder")}
             </button>
             <button
               onClick={() => onNavigate("scientific-governance")}
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-100 rounded-lg text-xs font-semibold border border-slate-600 transition-all"
             >
               <ShieldCheck className="h-4 w-4 text-purple-400" />
-              Audit & Governance
+              {t("Audit & Governance")}
             </button>
             {onOpenTour && (
               <button
@@ -91,7 +93,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-950/80 hover:bg-blue-900 text-blue-200 rounded-lg text-xs font-semibold border border-blue-700/80 transition-all"
               >
                 <BookOpen className="h-4 w-4 text-blue-300" />
-                12-State Lifecycle Tour
+                {t("12-State Lifecycle Tour")}
               </button>
             )}
           </div>
@@ -105,37 +107,43 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
       <div className="p-4 bg-amber-50/90 border border-amber-200 rounded-xl flex items-start gap-3.5 text-amber-900 shadow-2xs">
         <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
         <div className="text-xs leading-relaxed">
-          <strong>Scientific Boundary & Methodological Contract:</strong> This platform implements formal data
-          contracts, runtime state machines, 170 operational measurement specifications, and cryptographic audit ledgers.
-          Synthetic runs are for software contract verification and reproducible protocol specification. It does not
-          impute clinical validity or empirical norms without external preregistered trials.
+          <strong>{t("Scientific Boundary & Methodological Contract:")}</strong>{" "}
+          {t(
+            "This platform implements formal data contracts, runtime state machines, 170 operational measurement specifications, and cryptographic audit ledgers. Synthetic runs are for software contract verification and reproducible protocol specification. It does not impute clinical validity or empirical norms without external preregistered trials."
+          )}
+          <button
+            onClick={() => onNavigate("scientific-boundary")}
+            className="ml-2 font-semibold underline hover:text-amber-950 inline-flex items-center gap-0.5 cursor-pointer text-amber-900 transition-colors"
+          >
+            {isAz ? "Tam Sərhəd Bəyannaməsini Oxuyun →" : "Read Full Boundary Declaration →"}
+          </button>
         </div>
       </div>
 
       {/* Metrics Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
-          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Ontology Depth</div>
-          <div className="text-2xl font-bold text-slate-900 font-mono">9 Levels</div>
-          <p className="text-xs text-slate-500">L0 (Physical) to L8 (Meta-Revision)</p>
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{t("Ontology Depth")}</div>
+          <div className="text-2xl font-bold text-slate-900 font-mono">{t("9 Levels")}</div>
+          <p className="text-xs text-slate-500">{t("L0 (Physical) to L8 (Meta-Revision)")}</p>
         </div>
 
         <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
-          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Specifications</div>
-          <div className="text-2xl font-bold text-slate-900 font-mono">170 Tasks</div>
-          <p className="text-xs text-slate-500">Across 34 assessment domains</p>
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{t("Specifications")}</div>
+          <div className="text-2xl font-bold text-slate-900 font-mono">{t("170 Tasks")}</div>
+          <p className="text-xs text-slate-500">{t("Across 34 assessment domains")}</p>
         </div>
 
         <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
-          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">State Machine</div>
-          <div className="text-2xl font-bold text-slate-900 font-mono">12 Transitions</div>
-          <p className="text-xs text-slate-500">Deterministic LOAD → LOCK</p>
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{t("State Machine")}</div>
+          <div className="text-2xl font-bold text-slate-900 font-mono">{t("12 Transitions")}</div>
+          <p className="text-xs text-slate-500">{t("Deterministic LOAD → LOCK")}</p>
         </div>
 
         <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
-          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Cryptographic Ledger</div>
-          <div className="text-2xl font-bold text-emerald-600 font-mono">SHA-256 Valid</div>
-          <p className="text-xs text-slate-500">Forward-only tamper-evident chain</p>
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{t("Cryptographic Ledger")}</div>
+          <div className="text-2xl font-bold text-emerald-600 font-mono">{t("SHA-256 Valid")}</div>
+          <p className="text-xs text-slate-500">{t("Forward-only tamper-evident chain")}</p>
         </div>
       </div>
 
@@ -150,15 +158,16 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
             <Layers className="h-5 w-5" />
           </div>
           <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center justify-between">
-            <span>9-Level Architecture</span>
+            <span>{t("9-Level Architecture")}</span>
             <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Explore the complete ontology from physical environment signals (L0) up to meta-level scientific model
-            revision (L8), with formal mathematical I/O contracts.
+            {t(
+              "Explore the complete ontology from physical environment signals (L0) up to meta-level scientific model revision (L8), with formal mathematical I/O contracts."
+            )}
           </p>
           <div className="pt-2 text-[11px] font-mono text-blue-600 flex items-center gap-1">
-            <span>Inspect L0 &rarr; L8 taxonomy</span>
+            <span>{t("Inspect L0 → L8 taxonomy")}</span>
           </div>
         </div>
 
@@ -171,15 +180,16 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
             <Cpu className="h-5 w-5" />
           </div>
           <h3 className="font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors flex items-center justify-between">
-            <span>Study Builder & Runtime</span>
+            <span>{t("Study Builder & Runtime")}</span>
             <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Assemble multi-domain experimental batteries, freeze protocol hashes, and run synthetic participants
-            through the discrete event bus.
+            {t(
+              "Assemble multi-domain experimental batteries, freeze protocol hashes, and run synthetic participants through the discrete event bus."
+            )}
           </p>
           <div className="pt-2 text-[11px] font-mono text-emerald-600 flex items-center gap-1">
-            <span>Configure & execute protocols</span>
+            <span>{t("Configure & execute protocols")}</span>
           </div>
         </div>
 
@@ -192,15 +202,16 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
             <ShieldCheck className="h-5 w-5" />
           </div>
           <h3 className="font-semibold text-slate-900 group-hover:text-purple-600 transition-colors flex items-center justify-between">
-            <span>Scientific Governance & Audit</span>
+            <span>{t("Scientific Governance & Audit")}</span>
             <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Monitor real-time analysis integrity, inspect the Evidence & Claim Graph, verify blockchain ledger hashes,
-            and audit model revisions.
+            {t(
+              "Monitor real-time analysis integrity, inspect the Evidence & Claim Graph, verify blockchain ledger hashes, and audit model revisions."
+            )}
           </p>
           <div className="pt-2 text-[11px] font-mono text-purple-600 flex items-center gap-1">
-            <span>View audit ledger & claims</span>
+            <span>{t("View audit ledger & claims")}</span>
           </div>
         </div>
       </div>
@@ -209,7 +220,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
       <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-4">
         <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
           <Database className="h-4 w-4 text-blue-600" />
-          Platform Execution Pipeline
+          {t("Platform Execution Pipeline")}
         </h3>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-2 text-center text-xs">
@@ -224,8 +235,8 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate, onOpenTour
             { step: "8. Revision", desc: "L8 Lineage" },
           ].map((item, idx) => (
             <div key={idx} className="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
-              <div className="font-semibold text-slate-800 text-[11px]">{item.step}</div>
-              <div className="text-[10px] text-slate-500">{item.desc}</div>
+              <div className="font-semibold text-slate-800 text-[11px]">{t(item.step)}</div>
+              <div className="text-[10px] text-slate-500">{t(item.desc)}</div>
             </div>
           ))}
         </div>

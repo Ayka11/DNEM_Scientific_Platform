@@ -1,7 +1,10 @@
 import React from "react";
 import { ShieldAlert, BookOpen, FileCheck, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "../i18n.js";
 
 export const ScientificBoundaryTab: React.FC = () => {
+  const { isAz } = useLanguage();
+
   return (
     <div className="space-y-6">
       <div className="bg-amber-50 border border-amber-200 p-6 rounded-xl shadow-xs">
@@ -11,13 +14,23 @@ export const ScientificBoundaryTab: React.FC = () => {
           </div>
           <div className="space-y-2">
             <h2 className="text-base font-bold text-amber-950">
-              Operational Scientific Boundary & Disclaimer Notice
+              {isAz
+                ? "Əməliyyat Elmi Sərhədi və İmtina Qeydi"
+                : "Operational Scientific Boundary & Disclaimer Notice"}
             </h2>
             <p className="text-sm text-amber-900 leading-relaxed">
-              The DNEM scaffold implements formal data contracts, runtime state machines, measurement registries,
-              result pipelines, and cryptographic audit ledgers. It does{" "}
-              <strong>not</strong> establish reliability, construct validity, causal inference, population norms,
-              diagnostic utility, or clinical/scientific conclusions.
+              {isAz ? (
+                <>
+                  DNEM karkası formal məlumat müqavilələri, icra vəziyyət maşınları, ölçmə reyestrləri, nəticə boru xətləri və kriptoqrafik audit reyestrlərini tətbiq edir. O, etibarlılıq, konstrukt etibarlılığı, səbəb-nəticə nəticələri, populyasiya normaları, diaqnostik faydalılıq və ya kliniki/elmi nəticələri <strong>müəyyən etmir</strong>.
+                </>
+              ) : (
+                <>
+                  The DNEM scaffold implements formal data contracts, runtime state machines, measurement registries,
+                  result pipelines, and cryptographic audit ledgers. It does{" "}
+                  <strong>not</strong> establish reliability, construct validity, causal inference, population norms,
+                  diagnostic utility, or clinical/scientific conclusions.
+                </>
+              )}
             </p>
           </div>
         </div>
@@ -29,13 +42,17 @@ export const ScientificBoundaryTab: React.FC = () => {
             <div className="h-7 w-7 rounded bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-xs">
               E1
             </div>
-            <h3 className="font-semibold text-slate-900 text-sm">Level I: Core Cognitive</h3>
+            <h3 className="font-semibold text-slate-900 text-sm">
+              {isAz ? "Səviyyə I: Əsas Koqnitiv" : "Level I: Core Cognitive"}
+            </h3>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Covers 11 domains (Fluid Intelligence, Working Memory, Processing Speed, Attention, Inhibitory Control, etc.) across 55 task specifications. Implements deterministic stimulus onset/offset timing contracts.
+            {isAz
+              ? "55 tapşırıq spesifikasiyası üzrə 11 domeni (Axıcı Zəka, İş Yaddaşı, Emal Sürəti, Diqqət, İnhibitor Nəzarət və s.) əhatə edir. Deterministik stimul başlanğıc/bitmə vaxtlama müqavilələrini tətbiq edir."
+              : "Covers 11 domains (Fluid Intelligence, Working Memory, Processing Speed, Attention, Inhibitory Control, etc.) across 55 task specifications. Implements deterministic stimulus onset/offset timing contracts."}
           </p>
           <div className="pt-2 text-[11px] font-mono text-slate-500 border-t border-slate-100">
-            Maturity: SPECIFIED | Baseline: Behavioral
+            {isAz ? "Yetkinlik: SPESİFİKASİYA OLUNUB | Baza: Davranış" : "Maturity: SPECIFIED | Baseline: Behavioral"}
           </div>
         </div>
 
@@ -44,13 +61,17 @@ export const ScientificBoundaryTab: React.FC = () => {
             <div className="h-7 w-7 rounded bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-xs">
               E2
             </div>
-            <h3 className="font-semibold text-slate-900 text-sm">Level II: Regulatory</h3>
+            <h3 className="font-semibold text-slate-900 text-sm">
+              {isAz ? "Səviyyə II: Tənzimləyici" : "Level II: Regulatory"}
+            </h3>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Covers 12 regulatory assessment domains (State Regulation, Cognitive Load, Adaptation, Model Updating, Accessible Capacity) across 60 task specifications with dynamic feedback models.
+            {isAz
+              ? "Dinamik əks-əlaqə modelləri ilə 60 tapşırıq spesifikasiyası üzrə 12 tənzimləyici qiymətləndirmə domenini (Vəziyyət Tənzimlənməsi, Koqnitiv Yük, Uyğunlaşma, Model Yenilənməsi, Əlçatan Tutum) əhatə edir."
+              : "Covers 12 regulatory assessment domains (State Regulation, Cognitive Load, Adaptation, Model Updating, Accessible Capacity) across 60 task specifications with dynamic feedback models."}
           </p>
           <div className="pt-2 text-[11px] font-mono text-slate-500 border-t border-slate-100">
-            Maturity: SPECIFIED | Baseline: Regulatory
+            {isAz ? "Yetkinlik: SPESİFİKASİYA OLUNUB | Baza: Tənzimləyici" : "Maturity: SPECIFIED | Baseline: Regulatory"}
           </div>
         </div>
 
@@ -59,13 +80,17 @@ export const ScientificBoundaryTab: React.FC = () => {
             <div className="h-7 w-7 rounded bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-xs">
               E3
             </div>
-            <h3 className="font-semibold text-slate-900 text-sm">Level III: Higher-Order</h3>
+            <h3 className="font-semibold text-slate-900 text-sm">
+              {isAz ? "Səviyyə III: Yüksək Səviyyəli" : "Level III: Higher-Order"}
+            </h3>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Covers 11 higher-order assessment domains (Social Cognition, Agency, Identity / Self-Model, Meaning Coherence, Neural Concordance) across 55 task specifications.
+            {isAz
+              ? "55 tapşırıq spesifikasiyası üzrə 11 yüksək səviyyəli qiymətləndirmə domenini (Sosial Koqnisiya, Agentlik, Kimlik / Öz-Model, Məna Koherentliyi, Neyral Uyğunluq) əhatə edir."
+              : "Covers 11 higher-order assessment domains (Social Cognition, Agency, Identity / Self-Model, Meaning Coherence, Neural Concordance) across 55 task specifications."}
           </p>
           <div className="pt-2 text-[11px] font-mono text-slate-500 border-t border-slate-100">
-            Maturity: SPECIFIED | Baseline: Multimodal
+            {isAz ? "Yetkinlik: SPESİFİKASİYA OLUNUB | Baza: Multimodal" : "Maturity: SPECIFIED | Baseline: Multimodal"}
           </div>
         </div>
       </div>
@@ -73,26 +98,30 @@ export const ScientificBoundaryTab: React.FC = () => {
       <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
           <BookOpen className="h-4 w-4 text-blue-600" />
-          Reproducibility & Governance Architecture
+          {isAz ? "Təkrarlanma və İdarəetmə Memarlığı" : "Reproducibility & Governance Architecture"}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600">
           <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
             <div className="font-semibold text-slate-800 flex items-center gap-1.5">
               <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-              Cryptographic Event Sequencing
+              {isAz ? "Kriptoqrafik Hadisə Ardıcıllığı" : "Cryptographic Event Sequencing"}
             </div>
             <p>
-              Every runtime transition and participant trial is hashed with SHA-256 in a forward-only sequence. This prevents post-hoc selective reporting and data alteration.
+              {isAz
+                ? "Hər bir icra keçidi və iştirakçı sınağı yalnız irəli gedən ardıcıllıqda SHA-256 ilə heşlənir. Bu, post-hoc selektiv hesabatı və məlumatların dəyişdirilməsini önləyir."
+                : "Every runtime transition and participant trial is hashed with SHA-256 in a forward-only sequence. This prevents post-hoc selective reporting and data alteration."}
             </p>
           </div>
 
           <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
             <div className="font-semibold text-slate-800 flex items-center gap-1.5">
               <FileCheck className="h-3.5 w-3.5 text-emerald-600" />
-              Preregistration Lock Enforcer
+              {isAz ? "Öncədən Qeydiyyat Kilidi İcraçısı" : "Preregistration Lock Enforcer"}
             </div>
             <p>
-              Studies require formal freezing before execution. Unregistered hypotheses or statistical models are marked as exploratory rather than confirmatory.
+              {isAz
+                ? "Tədqiqatlar icradan əvvəl formal dondurma tələb edir. Qeydiyyatdan keçməmiş hipotezlər və ya statistik modellər təsdiqləyici deyil, kəşfiyyat xarakterli kimi qeyd olunur."
+                : "Studies require formal freezing before execution. Unregistered hypotheses or statistical models are marked as exploratory rather than confirmatory."}
             </p>
           </div>
         </div>

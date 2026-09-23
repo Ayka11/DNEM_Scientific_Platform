@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ExperimentDataset } from "../types.js";
+import { useLanguage } from "../i18n.js";
 import {
   FlaskConical,
   Lock,
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 
 export const ExperimentWorkspaceTab: React.FC = () => {
+  const { isAz } = useLanguage();
   const [datasets, setDatasets] = useState<ExperimentDataset[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedDataset, setSelectedDataset] = useState<ExperimentDataset | null>(null);
@@ -20,7 +22,9 @@ export const ExperimentWorkspaceTab: React.FC = () => {
   // New dataset form
   const [newTitle, setNewTitle] = useState("");
   const [sampleSize, setSampleSize] = useState(60);
-  const [conditions, setConditions] = useState("Baseline Fixation, Standard Task Block, Dual-Task Interference");
+  const [conditions, setConditions] = useState(
+    "Baseline Fixation, Standard Task Block, Dual-Task Interference"
+  );
 
   const fetchDatasets = async () => {
     try {
@@ -83,11 +87,14 @@ export const ExperimentWorkspaceTab: React.FC = () => {
       <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
           <FlaskConical className="h-5 w-5 text-blue-600" />
-          Experiment Workspace & Dataset Governance
+          {isAz
+            ? "Eksperiment Mühiti və Verilənlər Bazasının İdarə Edilməsi"
+            : "Experiment Workspace & Dataset Governance"}
         </h2>
         <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
-          Manage experimental condition matrices, trial timing contracts, blinded participant cohorts, and immutable
-          data locks prior to unblinding and confirmatory hypothesis testing.
+          {isAz
+            ? "Korlaşdırmadan çıxarılma və təsdiqləyici hipotez sınağından əvvəl eksperimental şərt matrislərini, sınaq vaxtlama müqavilələrini, korlaşdırılmış iştirakçı qruplarını və dəyişməz məlumat kilidlərini idarə edin."
+            : "Manage experimental condition matrices, trial timing contracts, blinded participant cohorts, and immutable data locks prior to unblinding and confirmatory hypothesis testing."}
         </p>
       </div>
 
@@ -98,15 +105,17 @@ export const ExperimentWorkspaceTab: React.FC = () => {
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-4">
             <h3 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
               <Plus className="h-4 w-4 text-blue-600" />
-              Configure Experimental Cohort
+              {isAz ? "Eksperimental Qrupu Konfiqurasiya Edin" : "Configure Experimental Cohort"}
             </h3>
             <form onSubmit={handleCreateDataset} className="space-y-3 text-xs">
               <div>
-                <label className="font-semibold text-slate-700 block mb-1">Dataset / Cohort Name</label>
+                <label className="font-semibold text-slate-700 block mb-1">
+                  {isAz ? "Verilənlər Bazası / Qrup Adı" : "Dataset / Cohort Name"}
+                </label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. DNEM Cohort Phase-II"
+                  placeholder={isAz ? "məs. DNEM Kohort Mərhələ-II" : "e.g. DNEM Cohort Phase-II"}
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
                   className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -114,7 +123,9 @@ export const ExperimentWorkspaceTab: React.FC = () => {
               </div>
 
               <div>
-                <label className="font-semibold text-slate-700 block mb-1">Target Sample Size (N)</label>
+                <label className="font-semibold text-slate-700 block mb-1">
+                  {isAz ? "Hədəf Nümunə Ölçüsü (N)" : "Target Sample Size (N)"}
+                </label>
                 <input
                   type="number"
                   min="10"
@@ -127,7 +138,7 @@ export const ExperimentWorkspaceTab: React.FC = () => {
 
               <div>
                 <label className="font-semibold text-slate-700 block mb-1">
-                  Condition Matrix (comma-separated)
+                  {isAz ? "Şərt Matrisi (vergüllə ayrılmış)" : "Condition Matrix (comma-separated)"}
                 </label>
                 <textarea
                   rows={2}
@@ -141,7 +152,7 @@ export const ExperimentWorkspaceTab: React.FC = () => {
                 type="submit"
                 className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-xs transition-colors"
               >
-                Instantiate Dataset Container
+                {isAz ? "Verilənlər Konteynerini Yaradın" : "Instantiate Dataset Container"}
               </button>
             </form>
           </div>
@@ -149,7 +160,9 @@ export const ExperimentWorkspaceTab: React.FC = () => {
           {/* Dataset Selector */}
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-3">
             <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-              Experimental Datasets ({datasets.length})
+              {isAz
+                ? `Eksperimental Verilənlər Bazaları (${datasets.length})`
+                : `Experimental Datasets (${datasets.length})`}
             </h3>
 
             <div className="space-y-2">
@@ -174,11 +187,11 @@ export const ExperimentWorkspaceTab: React.FC = () => {
                             : "bg-amber-100 text-amber-800"
                         }`}
                       >
-                        {ds.data_lock_status}
+                        {ds.data_lock_status === "LOCKED" && isAz ? "KİLİDLƏNİB" : ds.data_lock_status}
                       </span>
                     </div>
                     <div className="text-[11px] text-slate-500 mt-1 flex justify-between">
-                      <span>N = {ds.sample_size} participants</span>
+                      <span>{isAz ? `N = ${ds.sample_size} iştirakçı` : `N = ${ds.sample_size} participants`}</span>
                       <span className="font-mono">{ds.dataset_id}</span>
                     </div>
                   </div>
@@ -201,7 +214,7 @@ export const ExperimentWorkspaceTab: React.FC = () => {
                     </span>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">
-                    Created: {new Date(selectedDataset.created_at).toLocaleString()}
+                    {isAz ? "Yaradıldı:" : "Created:"} {new Date(selectedDataset.created_at).toLocaleString()}
                   </p>
                 </div>
 
@@ -211,26 +224,30 @@ export const ExperimentWorkspaceTab: React.FC = () => {
                     className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-semibold shadow-xs transition-colors self-start sm:self-auto"
                   >
                     <Lock className="h-3.5 w-3.5" />
-                    Enforce Cryptographic Data Lock
+                    {isAz ? "Kriptoqrafik Məlumat Kilidini Tətbiq Edin" : "Enforce Cryptographic Data Lock"}
                   </button>
                 ) : (
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-purple-50 text-purple-800 border border-purple-200 rounded-lg text-xs font-semibold">
                     <Lock className="h-3.5 w-3.5" />
-                    Data Locked (Tamper-Sealed)
+                    {isAz ? "Məlumat Kilidləndi (Dəyişiklikdən Mühafizəli)" : "Data Locked (Tamper-Sealed)"}
                   </span>
                 )}
               </div>
 
               {/* Checksum and Integrity */}
               <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-1 font-mono">
-                <span className="text-slate-500 uppercase text-[10px] font-semibold">SHA-256 Checksum</span>
+                <span className="text-slate-500 uppercase text-[10px] font-semibold">
+                  {isAz ? "SHA-256 Nəzarət Məbləği" : "SHA-256 Checksum"}
+                </span>
                 <div className="text-slate-900 break-all">{selectedDataset.checksum}</div>
               </div>
 
               {/* Conditions Matrix */}
               <div className="space-y-2">
                 <span className="text-xs font-semibold text-slate-800">
-                  Assigned Experimental Conditions ({selectedDataset.condition_matrix.length})
+                  {isAz
+                    ? `Təyin Edilmiş Eksperimental Şərtlər (${selectedDataset.condition_matrix.length})`
+                    : `Assigned Experimental Conditions (${selectedDataset.condition_matrix.length})`}
                 </span>
                 <div className="space-y-1.5">
                   {selectedDataset.condition_matrix.map((cond, i) => (
@@ -242,7 +259,9 @@ export const ExperimentWorkspaceTab: React.FC = () => {
                         <span className="font-mono font-bold text-blue-600">[{i + 1}]</span>
                         <span>{cond}</span>
                       </div>
-                      <span className="text-[10px] text-slate-500 font-mono">Block {i + 1}</span>
+                      <span className="text-[10px] text-slate-500 font-mono">
+                        {isAz ? `Blok ${i + 1}` : `Block ${i + 1}`}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -252,7 +271,9 @@ export const ExperimentWorkspaceTab: React.FC = () => {
               <div className="space-y-3">
                 <h4 className="text-xs font-semibold text-slate-800 flex items-center gap-2">
                   <Clock className="h-4 w-4 text-blue-600" />
-                  Trial-Level Data Contract Schema (Stimulus & Response Timing)
+                  {isAz
+                    ? "Sınaq Səviyyəli Məlumat Müqaviləsi Sxemi (Stimul və Reaksiya Vaxtlaması)"
+                    : "Trial-Level Data Contract Schema (Stimulus & Response Timing)"}
                 </h4>
                 <div className="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs overflow-x-auto">
                   <pre>{JSON.stringify(
@@ -278,7 +299,9 @@ export const ExperimentWorkspaceTab: React.FC = () => {
             </div>
           ) : (
             <div className="bg-white p-12 rounded-xl border border-slate-200 text-center text-slate-400 text-xs italic">
-              Select or create a dataset to view its configuration.
+              {isAz
+                ? "Konfiqurasiyasına baxmaq üçün verilənlər bazası seçin və ya yaradın."
+                : "Select or create a dataset to view its configuration."}
             </div>
           )}
         </div>
