@@ -10,3 +10,5 @@ build/
 dnem_localhost_*.log
 *.sqlite
 *.sqlite3
+
+node_modules/
