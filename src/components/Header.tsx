@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
+import { LanguageSwitcher } from "../i18n.js";
 import {
   Activity,
   ShieldAlert,
@@ -101,7 +102,8 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Quick Action Controls */}
           <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 self-start lg:self-auto">
             {/* Command Palette Trigger */}
-            <button
+            <LanguageSwitcher />
+<button
               onClick={onOpenSearch}
               className="flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700 transition-colors"
               title="Quick search (Cmd+K / Ctrl+K)"
@@ -109,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
               <Search className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
               <span className="hidden sm:inline">Search</span>
               <kbd className="font-mono text-[10px] bg-white dark:bg-slate-900 px-1 py-0.5 rounded border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400">
-                ⌘K
+                вЊK
               </kbd>
             </button>
 
@@ -208,4 +210,5 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+
 

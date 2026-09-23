@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header.js";
 import { OverviewTab } from "./components/OverviewTab.js";
 import { NineLevelArchitectureTab } from "./components/NineLevelArchitectureTab.js";
@@ -15,8 +15,12 @@ import { ModelRevisionTab } from "./components/ModelRevisionTab.js";
 import { AboutTab } from "./components/AboutTab.js";
 import { CommandPalette } from "./components/CommandPalette.js";
 import { LifecycleTourModal } from "./components/LifecycleTourModal.js";
+import { initLanguage } from "./i18n.js";
 
 export function App() {
+  useEffect(() => {
+    initLanguage();
+  }, []);
   const [activeTab, setActiveTab] = useState<string>("overview");
   const [selectedTestParadigm, setSelectedTestParadigm] = useState<string>("C05-01");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
@@ -131,3 +135,4 @@ export function App() {
 }
 
 export default App;
+
